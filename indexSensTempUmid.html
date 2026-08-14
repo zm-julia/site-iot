@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleDetalhe.css">
+    <link rel="shortcut icon" href="./imagens/logo_industriaConectada.svg" type="image/svg+xml">
+    <title>Sensores de Temperatura e Umidade | Indústria Conectada</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./imagens/logo_industriaConectada.svg" alt="Logo Indústria Conectada" class="logo"
+                onclick="location.href='./index.html'">
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./indexRobos.html">Robôs Industriais</a>
+                <a href="./indexSensoresIoT.html">Sensores IoT</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
+                <a href="./indexGaleria.html">Galeria</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb"><a href="./index.html">Home</a> / <a href="./indexSensoresIoT.html">Sensores IoT</a> / Sensores de Temperatura e Umidade</div>
+
+    <h1>Sensores de Temperatura e Umidade</h1>
+    <p class="subtitulo">Sensores responsáveis por medir grandezas térmicas e a quantidade de vapor d'água no ar, essenciais para climatização, estufas, câmaras frias e monitoramento ambiental.</p>
+
+    <div class="filtro-barra">
+        <input type="text" id="buscaSensor" placeholder="Buscar sensor pelo nome (ex.: DHT11, MQ-2, HC-SR04)...">
+        <select id="filtroCategoria">
+<option value="todas">Todas as categorias</option>
+                <option value="temperatura-umidade">Temperatura e Umidade</option>
+        </select>
+    </div>
+
+    <p class="sem-resultado" id="semResultado">Nenhum sensor encontrado com esse filtro.</p>
+
+    <div class="ficha" data-nome="dht11" data-categoria="temperatura-umidade">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorTermometro.svg" alt="Ícone DHT11">
+            <div class="titulo">
+                <span class="categoria-tag">Temperatura e Umidade</span>
+                <h2>DHT11</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O DHT11 é um sensor digital combinado de temperatura e umidade relativa do ar, muito usado em projetos introdutórios de IoT por seu baixo custo e facilidade de uso.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>Internamente possui um termistor NTC para medir temperatura e um sensor capacitivo de umidade. Um microcontrolador embutido no próprio módulo faz a leitura analógica desses elementos e envia o resultado já convertido em um protocolo digital de um único fio (single-wire).</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>3V a 5,5V</td></tr>
+            <tr><th>Faixa de temperatura</th><td>0°C a 50°C (±2°C)</td></tr>
+            <tr><th>Faixa de umidade</th><td>20% a 90% UR (±5%)</td></tr>
+            <tr><th>Taxa de amostragem</th><td>Aprox. 1 leitura por segundo</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Digital (protocolo proprietário de 1 fio)</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Monitoramento de temperatura e umidade em estufas e ambientes internos</li>
+                <li>Projetos educacionais de estações meteorológicas com Arduino/ESP32</li>
+                <li>Controle simples de ventilação em armários e gabinetes elétricos</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Conectado a um pino digital do Arduino, o DHT11 permite montar uma estação de monitoramento ambiental que envia os dados por Wi-Fi (via ESP32) para um painel de IoT em nuvem.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Aosong (fabricante original), Módulos compatíveis: Keyestudio, HiLetgo</p>
+    </div>
+
+    <div class="ficha" data-nome="dht22" data-categoria="temperatura-umidade">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorTermometro.svg" alt="Ícone DHT22">
+            <div class="titulo">
+                <span class="categoria-tag">Temperatura e Umidade</span>
+                <h2>DHT22</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O DHT22 (também chamado AM2302) é a versão mais precisa e com maior faixa de medição do que o DHT11, sendo indicado quando o projeto exige maior confiabilidade nos dados.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>Assim como o DHT11, combina um sensor capacitivo de umidade e um termistor de precisão, mas com componentes de melhor qualidade e um circuito de conversão mais estável, resultando em leituras mais exatas e em uma faixa de operação mais ampla.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>3,3V a 6V</td></tr>
+            <tr><th>Faixa de temperatura</th><td>-40°C a 80°C (±0,5°C)</td></tr>
+            <tr><th>Faixa de umidade</th><td>0% a 100% UR (±2%)</td></tr>
+            <tr><th>Taxa de amostragem</th><td>Aprox. 1 leitura a cada 2 segundos</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Digital (protocolo proprietário de 1 fio)</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Monitoramento ambiental de precisão em estufas e câmaras frias</li>
+                <li>Sistemas de climatização automatizados (HVAC)</li>
+                <li>Data loggers de temperatura e umidade para controle de qualidade</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Em uma câmara fria conectada a um Raspberry Pi, o DHT22 monitora continuamente a umidade para acionar um desumidificador automaticamente quando o valor ultrapassa o limite configurado.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Aosong (fabricante original), Módulos compatíveis: Adafruit, DFRobot</p>
+    </div>
+
+    <div class="ficha" data-nome="lm35" data-categoria="temperatura-umidade">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorTermometro.svg" alt="Ícone LM35">
+            <div class="titulo">
+                <span class="categoria-tag">Temperatura</span>
+                <h2>LM35</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O LM35 é um sensor analógico de temperatura de precisão cuja tensão de saída é linearmente proporcional à temperatura em graus Celsius, sem necessidade de calibração externa.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>É um circuito integrado que gera uma tensão de saída de 10 mV para cada 1°C de temperatura. Basta ler essa tensão com uma entrada analógica (ADC) e aplicar uma conversão matemática simples para obter a temperatura em graus Celsius.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>4V a 30V</td></tr>
+            <tr><th>Faixa de temperatura</th><td>-55°C a 150°C</td></tr>
+            <tr><th>Sensibilidade</th><td>10 mV/°C</td></tr>
+            <tr><th>Precisão típica</th><td>±0,5°C a 25°C</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Analógico</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Medição de temperatura de líquidos e ambientes industriais</li>
+                <li>Proteção térmica de motores e painéis elétricos</li>
+                <li>Sistemas simples de controle de temperatura (ex.: incubadoras)</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Ligado a uma entrada analógica do Arduino, o LM35 permite calcular a temperatura com a fórmula temperatura = (leitura_ADC * 5.0 / 1023.0) * 100, exibindo o valor em um display ou enviando via serial.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Texas Instruments (fabricante original do CI), Módulos com o CI LM35: diversos fabricantes de placas de desenvolvimento</p>
+    </div>
+
+    <div class="ficha" data-nome="ds18b20" data-categoria="temperatura-umidade">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorTermometro.svg" alt="Ícone DS18B20">
+            <div class="titulo">
+                <span class="categoria-tag">Temperatura</span>
+                <h2>DS18B20</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O DS18B20 é um sensor digital de temperatura à prova d'água (em sua versão encapsulada), muito usado quando é preciso medir a temperatura de líquidos ou em ambientes externos.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>Utiliza o protocolo digital 1-Wire, permitindo que vários sensores DS18B20 compartilhem o mesmo pino do microcontrolador, cada um identificado por um endereço único de 64 bits gravado de fábrica.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>3V a 5,5V</td></tr>
+            <tr><th>Faixa de temperatura</th><td>-55°C a 125°C (±0,5°C entre -10°C e 85°C)</td></tr>
+            <tr><th>Resolução configurável</th><td>9 a 12 bits</td></tr>
+            <tr><th>Comunicação</th><td>Protocolo 1-Wire (Dallas/Maxim)</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Digital (1-Wire)</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Monitoramento de temperatura de líquidos em tanques industriais</li>
+                <li>Estações meteorológicas externas (encapsulamento resistente à umidade)</li>
+                <li>Monitoramento de múltiplos pontos de temperatura em uma mesma linha (vários sensores no mesmo barramento)</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Vários sensores DS18B20 distribuídos ao longo de uma tubulação, todos ligados ao mesmo pino digital do Arduino, permitem mapear o perfil de temperatura da tubulação inteira usando apenas um fio de dados.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Maxim Integrated / Analog Devices (fabricante original), Módulos à prova d'água: diversos fabricantes (ex.: DFRobot, HiLetgo)</p>
+    </div>
+
+    <footer>
+        <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+    </footer>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

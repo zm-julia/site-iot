@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+  <defs>
+    <linearGradient id="g_rfid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3a1030"/>
+      <stop offset="100%" stop-color="#1e0818"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="214" height="214" rx="22" fill="url(#g_rfid)" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/>
+  
+  <rect x="45" y="75" width="130" height="80" rx="10" fill="#ffffff"/>
+  <rect x="45" y="75" width="130" height="80" rx="10" fill="none" stroke="#ff5fc4" stroke-width="4"/>
+  <circle cx="80" cy="115" r="18" fill="none" stroke="#4fd7ff" stroke-width="5"/>
+  <circle cx="80" cy="115" r="8" fill="#4fd7ff"/>
+  <line x1="110" y1="105" x2="155" y2="105" stroke="#4fd7ff" stroke-width="5"/>
+  <line x1="110" y1="120" x2="155" y2="120" stroke="#4fd7ff" stroke-width="5"/>
+  <line x1="110" y1="135" x2="140" y2="135" stroke="#4fd7ff" stroke-width="5"/>
+
+</svg>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleDetalhe.css">
+    <link rel="shortcut icon" href="./imagens/logo_industriaConectada.svg" type="image/svg+xml">
+    <title>Robô Colaborativo (Cobot) | Indústria Conectada</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./imagens/logo_industriaConectada.svg" alt="Logo Indústria Conectada" class="logo"
+                onclick="location.href='./index.html'">
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./indexRobos.html">Robôs Industriais</a>
+                <a href="./indexSensoresIoT.html">Sensores IoT</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
+                <a href="./indexGaleria.html">Galeria</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb"><a href="./index.html">Home</a> / <a href="./indexRobos.html">Robôs Industriais</a> / Robô Colaborativo (Cobot)</div>
+
+    <h1>Robô Colaborativo (Cobot)</h1>
+    <p class="subtitulo">Projetado para trabalhar lado a lado com pessoas, com sensores de força e segurança que interrompem o movimento em caso de contato.</p>
+
+    <div class="indice">
+        <a href="#conceito">Conceito</a>
+        <a href="#funcionamento">Funcionamento</a>
+        <a href="#caracteristicas">Características técnicas</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#iot">Integração com IoT</a>
+        <a href="#modelos">Modelos comerciais</a>
+    </div>
+
+    <div class="ficha">
+        <div class="ficha-header">
+            <img src="./imagens/img_roboColaborativo.svg" alt="Ilustração Robô Colaborativo (Cobot)">
+            <div class="titulo">
+                <span class="categoria-tag">Robô industrial</span>
+                <h2>Robô Colaborativo (Cobot)</h2>
+            </div>
+        </div>
+
+        <h3 id="conceito">Conceito</h3>
+        <p>Robôs colaborativos, ou 'cobots', são manipuladores (geralmente de cinemática articulada) projetados desde o início para compartilhar o mesmo espaço de trabalho com operadores humanos, sem a necessidade de grades de proteção físicas. Isso é possível graças a sensores de força/torque em cada junta e softwares de segurança certificados.</p>
+
+        <h3 id="funcionamento">Princípio de funcionamento</h3>
+        <p>Cada junta do cobot possui sensores de torque que detectam qualquer resistência inesperada ao movimento (como o contato com uma pessoa) e param o robô em frações de segundo, dentro dos limites definidos pela norma ISO/TS 15066. Muitos modelos também usam câmeras 3D e sensores de proximidade capacitivos na 'pele' do robô para reduzir a velocidade antes mesmo do toque, permitindo programação simplificada por demonstração (guiando o braço manualmente).</p>
+
+        <h3 id="caracteristicas">Principais características técnicas</h3>
+        <table class="specs">
+            <tr><th>Graus de liberdade</th><td>Tipicamente 6 ou 7 eixos rotativos</td></tr>
+            <tr><th>Capacidade de carga</th><td>3 kg a 20 kg, em geral</td></tr>
+            <tr><th>Segurança</th><td>Sensores de força/torque em cada junta, parada segura por contato (ISO/TS 15066)</td></tr>
+            <tr><th>Programação</th><td>Por demonstração (guiar o braço) ou por interface gráfica simplificada</td></tr>
+            <tr><th>Velocidade</th><td>Reduzida em relação a robôs industriais tradicionais, priorizando segurança</td></tr>
+            <tr><th>Instalação</th><td>Não exige, na maioria dos casos, cercas de proteção física</td></tr>
+        </table>
+
+        <h3 id="aplicacoes">Aplicações industriais</h3>
+        <ul>
+                <li>Montagem colaborativa em bancadas compartilhadas com operadores</li>
+                <li>Inspeção de qualidade assistida por visão computacional</li>
+                <li>Parafusamento e pequenas tarefas de precisão junto ao operador</li>
+                <li>Alimentação de máquinas CNC em pequenas e médias empresas</li>
+                <li>Embalagem final de produtos em linhas flexíveis</li>
+        </ul>
+
+        <h3 id="iot">Integração com automação e IoT</h3>
+        <p>Cobots são um dos exemplos mais claros de dispositivo IoT industrial 'pronto para uso': trazem interfaces nativas para MQTT, REST API ou OPC UA, publicando continuamente dados de posição, força aplicada, alarmes de segurança e status do ciclo. Isso permite que pequenas e médias empresas implementem monitoramento em nuvem e dashboards de produção sem grande investimento em infraestrutura adicional.</p>
+
+        <h3 id="modelos">Modelos comerciais</h3>
+        <table class="modelos">
+            <thead>
+                <tr><th>Fabricante</th><th>Modelo</th><th>Destaque técnico</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>Universal Robots</strong></td>
+                <td>UR5e / UR10e</td>
+                <td>Referência de mercado em cobots, ampla comunidade e ecossistema de acessórios</td>
+            </tr>
+            <tr>
+                <td><strong>FANUC</strong></td>
+                <td>CRX-10iA</td>
+                <td>Cobot verde característico, programação simplificada</td>
+            </tr>
+            <tr>
+                <td><strong>Techman Robot</strong></td>
+                <td>TM5-700</td>
+                <td>Câmera de visão integrada nativamente ao punho do robô</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+    </footer>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

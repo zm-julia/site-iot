@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleDetalhe.css">
+    <link rel="shortcut icon" href="./imagens/logo_industriaConectada.svg" type="image/svg+xml">
+    <title>Sensores Elétricos e Mecânicos | Indústria Conectada</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./imagens/logo_industriaConectada.svg" alt="Logo Indústria Conectada" class="logo"
+                onclick="location.href='./index.html'">
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./indexRobos.html">Robôs Industriais</a>
+                <a href="./indexSensoresIoT.html">Sensores IoT</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
+                <a href="./indexGaleria.html">Galeria</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb"><a href="./index.html">Home</a> / <a href="./indexSensoresIoT.html">Sensores IoT</a> / Sensores Elétricos e Mecânicos</div>
+
+    <h1>Sensores Elétricos e Mecânicos</h1>
+    <p class="subtitulo">Sensores que monitoram grandezas elétricas (corrente e tensão) e mecânicas (vibração, rotação e posição angular) de máquinas e motores.</p>
+
+    <div class="filtro-barra">
+        <input type="text" id="buscaSensor" placeholder="Buscar sensor pelo nome (ex.: DHT11, MQ-2, HC-SR04)...">
+        <select id="filtroCategoria">
+<option value="todas">Todas as categorias</option>
+                <option value="corrente">Corrente</option>
+                <option value="tensao">Tensão</option>
+                <option value="vibracao">Vibração</option>
+                <option value="rotacao">Rotação</option>
+                <option value="encoder">Encoder</option>
+        </select>
+    </div>
+
+    <p class="sem-resultado" id="semResultado">Nenhum sensor encontrado com esse filtro.</p>
+
+    <div class="ficha" data-nome="acs712" data-categoria="corrente">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorCorrente.svg" alt="Ícone ACS712">
+            <div class="titulo">
+                <span class="categoria-tag">Corrente</span>
+                <h2>ACS712</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O ACS712 é um sensor de efeito Hall que mede corrente elétrica (contínua ou alternada) sem a necessidade de interromper o circuito com um resistor shunt.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>A corrente a ser medida passa por uma trilha condutora interna ao chip, gerando um campo magnético proporcional. Um elemento de efeito Hall integrado detecta esse campo e converte a intensidade da corrente em uma tensão de saída analógica linear e proporcional.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>5V</td></tr>
+            <tr><th>Faixas disponíveis</th><td>±5A, ±20A ou ±30A, dependendo do modelo</td></tr>
+            <tr><th>Sensibilidade</th><td>185, 100 ou 66 mV/A, conforme a faixa</td></tr>
+            <tr><th>Isolamento</th><td>Isolamento galvânico entre o circuito de potência e o de medição</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Analógico</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Monitoramento de consumo de corrente de motores industriais</li>
+                <li>Detecção de sobrecarga elétrica em painéis de automação</li>
+                <li>Medição de energia consumida por equipamentos em projetos de eficiência energética</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Instalado em série com o motor de uma esteira, o ACS712 permite que um Arduino monitore a corrente em tempo real e desligue o motor automaticamente em caso de sobrecarga, protegendo o equipamento.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Allegro MicroSystems (fabricante original do CI), Módulos: diversos fabricantes de placas breakout compatíveis</p>
+    </div>
+
+    <div class="ficha" data-nome="zmpt101b" data-categoria="tensao">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorTensao.svg" alt="Ícone ZMPT101B">
+            <div class="titulo">
+                <span class="categoria-tag">Tensão</span>
+                <h2>ZMPT101B</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O ZMPT101B é um módulo baseado em transformador de precisão usado para medir tensão alternada (CA), muito utilizado em projetos de monitoramento de energia elétrica.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>Um pequeno transformador de tensão reduz e isola galvanicamente a tensão da rede elétrica para um nível seguro, compatível com a entrada analógica do microcontrolador. O sinal resultante, ainda alternado, é processado no código para calcular o valor RMS da tensão de entrada.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de entrada</th><td>Até 250V CA (rede monofásica)</td></tr>
+            <tr><th>Alimentação do módulo</th><td>5V</td></tr>
+            <tr><th>Isolamento</th><td>Galvânico, via transformador</td></tr>
+            <tr><th>Saída</th><td>Sinal analógico alternado, proporcional à tensão de entrada</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Analógico</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Monitoramento de tensão da rede elétrica em painéis industriais</li>
+                <li>Projetos de medidores de energia (wattímetros) de baixo custo</li>
+                <li>Detecção de quedas ou picos de tensão para acionar proteções</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Combinado com o ACS712 em um mesmo projeto, o ZMPT101B permite calcular a potência elétrica real consumida por uma máquina (tensão x corrente), formando um medidor de energia simples baseado em Arduino.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Fabricante genérico do módulo (design amplamente replicado), Distribuído por diversos fabricantes de placas de desenvolvimento</p>
+    </div>
+
+    <div class="ficha" data-nome="sw-420" data-categoria="vibracao">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorVibracao.svg" alt="Ícone SW-420">
+            <div class="titulo">
+                <span class="categoria-tag">Vibração</span>
+                <h2>SW-420</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O SW-420 é um sensor digital de vibração que detecta movimentos, impactos ou trepidações em uma superfície ou equipamento.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>Utiliza uma mola metálica dentro de um tubo condutor: em repouso, a mola mantém contato elétrico constante; quando ocorre vibração, o contato é interrompido momentaneamente, gerando pulsos que são detectados pelo circuito comparador do módulo.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>3,3V a 5V</td></tr>
+            <tr><th>Sensibilidade</th><td>Ajustável por potenciômetro</td></tr>
+            <tr><th>Saída</th><td>Digital (nível alto/baixo conforme vibração detectada)</td></tr>
+            <tr><th>Tempo de resposta</th><td>Rápido, adequado para detecção de impactos</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Digital</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Detecção de vibração anormal em motores e máquinas rotativas</li>
+                <li>Alarmes de segurança contra impacto ou arrombamento em gabinetes</li>
+                <li>Monitoramento simples de funcionamento de equipamentos (vibra = está ligado)</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Fixado na carcaça de um motor industrial, o SW-420 permite que um ESP32 detecte vibração excessiva e envie um alerta MQTT indicando possível desbalanceamento ou falha mecânica iminente.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Fabricante genérico amplamente replicado, Distribuído por HiLetgo, Elegoo, Keyestudio</p>
+    </div>
+
+    <div class="ficha" data-nome="sensor hall a3144" data-categoria="rotacao">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorRotacao.svg" alt="Ícone Sensor Hall A3144">
+            <div class="titulo">
+                <span class="categoria-tag">Rotação</span>
+                <h2>Sensor Hall A3144</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O A3144 é um sensor de efeito Hall digital usado para detectar a presença de campo magnético, muito empregado para medir a velocidade de rotação de motores e rodas.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>Quando um ímã se aproxima da face sensível do componente, o efeito Hall gera uma variação de tensão detectada internamente, que o circuito converte em uma saída digital (nível baixo na presença do ímã). Posicionando um ímã em um eixo giratório, cada volta gera um pulso.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>4,5V a 24V</td></tr>
+            <tr><th>Tipo de saída</th><td>Digital, coletor aberto (open-drain)</td></tr>
+            <tr><th>Resposta</th><td>Rápida, adequada para contagem de rotações em alta velocidade</td></tr>
+            <tr><th>Uso típico</th><td>Tacômetros e encoders simples de 1 pulso por volta</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Digital</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Medição de velocidade de rotação (RPM) de motores e ventiladores industriais</li>
+                <li>Contagem de voltas em esteiras e roldanas</li>
+                <li>Sistemas simples de tacômetro para monitoramento de eixos</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Com um ímã fixado no eixo de um motor e o A3144 posicionado próximo, o Arduino conta os pulsos por segundo e calcula a rotação em RPM, exibindo o valor em um display industrial.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Allegro MicroSystems (fabricante original do CI), Módulos breakout: diversos fabricantes compatíveis</p>
+    </div>
+
+    <div class="ficha" data-nome="encoder incremental ky-040" data-categoria="encoder">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorEncoder.svg" alt="Ícone Encoder Incremental KY-040">
+            <div class="titulo">
+                <span class="categoria-tag">Encoder / Rotação</span>
+                <h2>Encoder Incremental KY-040</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O KY-040 é um módulo de encoder rotativo incremental com botão de pressão integrado, usado para detectar tanto o sentido quanto a quantidade de rotação de um eixo manual.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>Possui dois contatos internos (canais A e B) defasados entre si. Ao girar o eixo, esses contatos geram pulsos em uma sequência específica; a ordem em que os pulsos ocorrem (A antes de B, ou vice-versa) indica o sentido de rotação, enquanto a contagem de pulsos indica a quantidade de 'cliques' girados.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>3,3V a 5V</td></tr>
+            <tr><th>Resolução</th><td>20 pulsos por volta, tipicamente</td></tr>
+            <tr><th>Saída</th><td>Dois canais digitais (A e B) + botão de pressão (push)</td></tr>
+            <tr><th>Aplicação</th><td>Entrada de controle manual com indicação de sentido</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Digital (quadratura A/B)</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Painéis de controle manual para ajuste fino de parâmetros de máquinas</li>
+                <li>Interfaces de menu em displays de equipamentos industriais</li>
+                <li>Controle manual de posição em sistemas de teste e bancadas</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Em um painel de ajuste de velocidade de um motor, o KY-040 permite que o operador gire o botão para aumentar ou diminuir o valor de referência (setpoint) exibido em um display, com o botão de pressão confirmando a seleção.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Fabricante genérico amplamente replicado, Distribuído por HiLetgo, Elegoo, Keyestudio</p>
+    </div>
+
+    <footer>
+        <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+    </footer>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

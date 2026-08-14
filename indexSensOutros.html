@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleDetalhe.css">
+    <link rel="shortcut icon" href="./imagens/logo_industriaConectada.svg" type="image/svg+xml">
+    <title>Sensores de Identificação, Peso, Som e Chama | Indústria Conectada</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./imagens/logo_industriaConectada.svg" alt="Logo Indústria Conectada" class="logo"
+                onclick="location.href='./index.html'">
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./indexRobos.html">Robôs Industriais</a>
+                <a href="./indexSensoresIoT.html">Sensores IoT</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
+                <a href="./indexGaleria.html">Galeria</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb"><a href="./index.html">Home</a> / <a href="./indexSensoresIoT.html">Sensores IoT</a> / Sensores de Identificação, Peso, Som e Chama</div>
+
+    <h1>Sensores de Identificação, Peso, Som e Chama</h1>
+    <p class="subtitulo">Sensores usados para identificar itens e pessoas, medir peso, monitorar ruído e detectar princípios de incêndio em ambientes industriais.</p>
+
+    <div class="filtro-barra">
+        <input type="text" id="buscaSensor" placeholder="Buscar sensor pelo nome (ex.: DHT11, MQ-2, HC-SR04)...">
+        <select id="filtroCategoria">
+<option value="todas">Todas as categorias</option>
+                <option value="rfid">RFID</option>
+                <option value="peso">Peso</option>
+                <option value="som">Som</option>
+                <option value="chama">Chama</option>
+        </select>
+    </div>
+
+    <p class="sem-resultado" id="semResultado">Nenhum sensor encontrado com esse filtro.</p>
+
+    <div class="ficha" data-nome="módulo rfid mfrc522" data-categoria="rfid">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorRFID.svg" alt="Ícone Módulo RFID MFRC522">
+            <div class="titulo">
+                <span class="categoria-tag">Identificação (RFID)</span>
+                <h2>Módulo RFID MFRC522</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O MFRC522 é um módulo leitor/gravador de cartões RFID (identificação por radiofrequência) no padrão MIFARE, usado para controle de acesso e identificação de itens.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>O módulo gera um campo eletromagnético de 13,56 MHz. Quando um cartão ou tag RFID passivo se aproxima, ele é energizado por esse campo e responde transmitindo seus dados (como um número de identificação único) de volta ao leitor, que se comunica com o microcontrolador via SPI.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>3,3V</td></tr>
+            <tr><th>Frequência de operação</th><td>13,56 MHz</td></tr>
+            <tr><th>Alcance de leitura</th><td>Até aproximadamente 5 cm</td></tr>
+            <tr><th>Interface de comunicação</th><td>SPI</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Digital (SPI)</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Controle de acesso a áreas restritas em plantas industriais</li>
+                <li>Identificação de peças ou lotes em sistemas de rastreabilidade (tracking)</li>
+                <li>Registro de ponto e liberação de uso de máquinas por operador autorizado</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Cada operador recebe um cartão RFID; ao aproximar o cartão do leitor MFRC522 conectado a um Arduino, o sistema libera o acionamento de uma máquina apenas para operadores cadastrados e autorizados.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>NXP Semiconductors (fabricante original do CI MFRC522), Módulos breakout: diversos fabricantes compatíveis</p>
+    </div>
+
+    <div class="ficha" data-nome="célula de carga + hx711" data-categoria="peso">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorPeso.svg" alt="Ícone Célula de Carga + HX711">
+            <div class="titulo">
+                <span class="categoria-tag">Peso</span>
+                <h2>Célula de Carga + HX711</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>A célula de carga é um transdutor que converte força/peso em um sinal elétrico, e o HX711 é o módulo amplificador/conversor que faz a leitura de precisão desse sinal para uso com microcontroladores.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>A célula de carga contém extensômetros (strain gauges) colados em uma estrutura metálica que se deforma minimamente sob peso, formando uma ponte de Wheatstone. Essa deformação altera a resistência elétrica dos extensômetros gerando um sinal muito pequeno, que o HX711 amplifica e converte em um valor digital de alta resolução (24 bits).</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação do HX711</th><td>2,6V a 5,5V</td></tr>
+            <tr><th>Resolução do conversor</th><td>24 bits</td></tr>
+            <tr><th>Capacidade da célula de carga</th><td>Varia conforme o modelo (ex.: 1 kg, 5 kg, 20 kg, 50 kg)</td></tr>
+            <tr><th>Comunicação</th><td>Protocolo digital de 2 fios (clock e dados)</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Digital (protocolo próprio de 2 fios)</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Balanças industriais para controle de peso de produtos</li>
+                <li>Sistemas de dosagem por peso em processos de mistura</li>
+                <li>Verificação automática de peso mínimo/máximo em linhas de embalagem</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Uma balança industrial construída com célula de carga e HX711 conectada a um Arduino verifica automaticamente se cada saco de produto embalado está dentro da faixa de peso especificada, rejeitando os fora do padrão.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Avia Semiconductor (fabricante original do CI HX711), Células de carga: diversos fabricantes (ex.: Straight Bar Load Cell genéricas)</p>
+    </div>
+
+    <div class="ficha" data-nome="sensor de som ky-037" data-categoria="som">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorSom.svg" alt="Ícone Sensor de Som KY-037">
+            <div class="titulo">
+                <span class="categoria-tag">Som</span>
+                <h2>Sensor de Som KY-037</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O KY-037 é um módulo sensor de som com microfone de eletreto, capaz de detectar a presença e a intensidade de ruído no ambiente.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>O microfone de eletreto capta as ondas sonoras e as converte em um pequeno sinal elétrico, que é amplificado pelo circuito do módulo. O módulo disponibiliza tanto uma saída analógica (proporcional à intensidade do som) quanto uma saída digital (que muda de estado quando um limiar ajustável é ultrapassado).</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>3,3V a 5V</td></tr>
+            <tr><th>Sensibilidade</th><td>Ajustável por potenciômetro (saída digital)</td></tr>
+            <tr><th>Saída</th><td>Analógica e digital</td></tr>
+            <tr><th>Uso típico</th><td>Detecção de ruído/som acima de um limiar</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Analógico e Digital</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Monitoramento de nível de ruído em ambientes industriais (segurança do trabalho)</li>
+                <li>Detecção de som anormal em máquinas (possível indício de falha)</li>
+                <li>Sistemas simples de ativação por palmas ou som em automação residencial</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Posicionado próximo a um compressor industrial, o KY-037 permite que um Arduino monitore continuamente o nível de ruído e registre picos anormais que possam indicar problemas mecânicos no equipamento.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Fabricante genérico amplamente replicado, Distribuído por HiLetgo, Elegoo, Keyestudio</p>
+    </div>
+
+    <div class="ficha" data-nome="sensor de chama ir" data-categoria="chama">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorChama.svg" alt="Ícone Sensor de Chama IR">
+            <div class="titulo">
+                <span class="categoria-tag">Chama</span>
+                <h2>Sensor de Chama IR</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O sensor de chama infravermelho detecta a radiação infravermelha característica emitida por fogo, sendo usado em sistemas de detecção precoce de incêndio.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>Um fototransistor ou fotodiodo sensível à faixa de infravermelho (760 a 1100 nm, faixa típica emitida por chamas) detecta a radiação e gera um sinal elétrico proporcional à intensidade da chama detectada, disponibilizado nas saídas analógica e digital do módulo.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>3,3V a 5V</td></tr>
+            <tr><th>Faixa espectral detectada</th><td>Aprox. 760 a 1100 nm (infravermelho)</td></tr>
+            <tr><th>Ângulo de detecção</th><td>Aproximadamente 60°</td></tr>
+            <tr><th>Distância de detecção</th><td>Até alguns metros, dependendo do tamanho da chama</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Analógico e Digital</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Sistemas de detecção precoce de incêndio em painéis elétricos</li>
+                <li>Alarmes automáticos de segurança em áreas de risco de fogo</li>
+                <li>Robótica de competição (robôs 'apaga-fogo')</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Instalado próximo a um quadro elétrico, o sensor de chama IR aciona imediatamente um alarme sonoro e envia uma notificação via ESP32 assim que detecta indícios de fogo, permitindo resposta rápida da equipe de segurança.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Fabricante genérico amplamente replicado, Distribuído por HiLetgo, Elegoo, Keyestudio</p>
+    </div>
+
+    <footer>
+        <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+    </footer>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

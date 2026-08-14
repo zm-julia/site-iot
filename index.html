@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./imagens/logo_industriaConectada.svg" type="image/svg+xml">
+    <title>Indústria Conectada | Robôs e Sensores da Indústria 4.0</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./imagens/logo_industriaConectada.svg" alt="Logo Indústria Conectada" class="logo"
+                onclick="location.href='./index.html'">
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./indexRobos.html">Robôs Industriais</a>
+                <a href="./indexSensoresIoT.html">Sensores IoT</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
+                <a href="./indexGaleria.html">Galeria</a>
+            </nav>
+        </div>
+    </header>
+
+    <img src="./imagens/img_bannerHome.svg" alt="Banner Robótica Industrial e IoT" class="banner">
+
+    <h1>Robótica Industrial e Internet das Coisas</h1>
+    <p class="subtitulo">
+        Catálogo técnico e educativo sobre os principais modelos de robôs usados na Indústria 4.0
+        e sobre os sensores que conectam máquinas, processos e sistemas de controle à internet.
+    </p>
+
+    <section class="intro-grid">
+
+        <div class="intro-card">
+            <h2>🌐 O que é a Internet das Coisas (IoT)</h2>
+            <p>
+                A Internet das Coisas é o conjunto de objetos físicos - máquinas, sensores,
+                atuadores e equipamentos - equipados com eletrônica embarcada e conectividade
+                de rede, capazes de coletar, trocar e processar dados sem que uma pessoa precise
+                intervir diretamente em cada leitura. No ambiente industrial, essa ideia recebe o
+                nome de IIoT (Industrial Internet of Things) e é um dos pilares da Indústria 4.0,
+                permitindo que chãos de fábrica inteiros sejam monitorados e ajustados em tempo real.
+            </p>
+        </div>
+
+        <div class="intro-card">
+            <h2>🦾 O que é Robótica Industrial</h2>
+            <p>
+                Robótica Industrial é a área da engenharia que projeta, constrói e programa
+                manipuladores mecânicos capazes de executar tarefas repetitivas, precisas ou
+                perigosas dentro de um processo produtivo - soldagem, pintura, montagem,
+                paletização, inspeção, entre outras. Cada robô possui uma cinemática própria
+                (a forma como seus eixos se movem), o que dá origem aos diferentes modelos
+                apresentados neste catálogo: Cartesiano, SCARA, Articulado, Cilíndrico, Delta,
+                Polar e Colaborativo.
+            </p>
+        </div>
+
+        <div class="intro-card">
+            <h2>⚙️ A importância da automação industrial</h2>
+            <p>
+                Automatizar um processo significa reduzir a dependência de intervenção humana
+                direta para que ele funcione com qualidade constante. Isso traz ganhos de
+                produtividade, redução de erros e de desperdício, maior segurança para os
+                trabalhadores em tarefas de risco e a possibilidade de operar em ritmo contínuo,
+                24 horas por dia. A automação é o que torna viável a produção em larga escala
+                mantendo padrão de qualidade em cada peça fabricada.
+            </p>
+        </div>
+
+        <div class="intro-card">
+            <h2>🔗 Robótica + IoT: uma relação direta</h2>
+            <p>
+                Um robô industrial moderno raramente trabalha sozinho: ele recebe dados de
+                sensores de proximidade, visão, força e temperatura, e envia seu próprio status
+                (posição, corrente do motor, ciclos executados) para redes industriais usando
+                protocolos como <strong>MQTT</strong>, <strong>OPC UA</strong>, <strong>Profinet</strong>
+                e <strong>Ethernet Industrial</strong>. É essa troca constante de dados entre robôs,
+                sensores e sistemas supervisórios que caracteriza a fábrica conectada da
+                Indústria 4.0, permitindo manutenção preditiva, controle remoto e tomada de
+                decisão baseada em dados reais do chão de fábrica.
+            </p>
+        </div>
+
+    </section>
+
+    <h1>Explore o catálogo</h1>
+
+    <div class="card-container">
+
+        <div class="card">
+            <img src="./imagens/img_roboArticulado.svg" alt="Ícone de robôs industriais">
+            <h3>Robôs Industriais</h3>
+            <p>Conheça os 7 principais modelos de robôs usados na indústria: características,
+                funcionamento, aplicações e integração com IoT.</p>
+            <button onclick="location.href='./indexRobos.html'">Ver robôs</button>
+        </div>
+
+        <div class="card">
+            <img src="./imagens/img_sensorTermometro.svg" alt="Ícone de sensores IoT">
+            <h3>Sensores IoT e Industriais</h3>
+            <p>Catálogo com mais de 20 sensores para Arduino, ESP32, Raspberry Pi e CLP, com
+                exemplos de programação.</p>
+            <button onclick="location.href='./indexSensoresIoT.html'">Ver sensores</button>
+        </div>
+
+        <div class="card">
+            <img src="./imagens/logo_industriaConectada.svg" alt="Ícone sobre o projeto">
+            <h3>Sobre o projeto</h3>
+            <p>Entenda o contexto acadêmico deste catálogo, desenvolvido para a unidade
+                curricular de Internet das Coisas.</p>
+            <button onclick="location.href='./indexSobre.html'">Saiba mais</button>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+    </footer>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

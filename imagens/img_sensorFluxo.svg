@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+  <defs>
+    <linearGradient id="g_fluxo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#062042"/>
+      <stop offset="100%" stop-color="#03141f"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="214" height="214" rx="22" fill="url(#g_fluxo)" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/>
+  
+  <circle cx="110" cy="110" r="55" fill="none" stroke="#4fd7ff" stroke-width="8"/>
+  <path d="M85 90 l25 20 l-25 20" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M120 90 l25 20 l-25 20" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+
+</svg>

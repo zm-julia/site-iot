@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleDetalhe.css">
+    <link rel="shortcut icon" href="./imagens/logo_industriaConectada.svg" type="image/svg+xml">
+    <title>Sensores de Gás, Solo, Chuva, Nível e Fluxo | Indústria Conectada</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./imagens/logo_industriaConectada.svg" alt="Logo Indústria Conectada" class="logo"
+                onclick="location.href='./index.html'">
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./indexRobos.html">Robôs Industriais</a>
+                <a href="./indexSensoresIoT.html">Sensores IoT</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
+                <a href="./indexGaleria.html">Galeria</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb"><a href="./index.html">Home</a> / <a href="./indexSensoresIoT.html">Sensores IoT</a> / Sensores de Gás, Solo, Chuva, Nível e Fluxo</div>
+
+    <h1>Sensores de Gás, Solo, Chuva, Nível e Fluxo</h1>
+    <p class="subtitulo">Sensores voltados ao monitoramento de condições ambientais e de processo: qualidade do ar, umidade do solo, chuva, nível de líquidos e vazão.</p>
+
+    <div class="filtro-barra">
+        <input type="text" id="buscaSensor" placeholder="Buscar sensor pelo nome (ex.: DHT11, MQ-2, HC-SR04)...">
+        <select id="filtroCategoria">
+<option value="todas">Todas as categorias</option>
+                <option value="gas">Gás</option>
+                <option value="solo">Umidade do Solo</option>
+                <option value="chuva">Chuva</option>
+                <option value="nivel">Nível</option>
+                <option value="fluxo">Fluxo</option>
+        </select>
+    </div>
+
+    <p class="sem-resultado" id="semResultado">Nenhum sensor encontrado com esse filtro.</p>
+
+    <div class="ficha" data-nome="mq-2" data-categoria="gas">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorGas.svg" alt="Ícone MQ-2">
+            <div class="titulo">
+                <span class="categoria-tag">Gás</span>
+                <h2>MQ-2</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O MQ-2 é um sensor de gás de baixo custo capaz de detectar fumaça e gases combustíveis como GLP, propano, metano e hidrogênio.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>Utiliza um elemento sensível de dióxido de estanho (SnO2), cuja condutividade elétrica aumenta na presença dos gases detectáveis. Essa mudança de condutividade é convertida em uma tensão analógica proporcional à concentração de gás no ar.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>5V</td></tr>
+            <tr><th>Gases detectados</th><td>GLP, propano, metano, álcool, hidrogênio, fumaça</td></tr>
+            <tr><th>Faixa de detecção</th><td>300 a 10000 ppm</td></tr>
+            <tr><th>Tempo de aquecimento</th><td>Necessita alguns minutos de pré-aquecimento</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Analógico (e digital via comparador embutido no módulo)</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Sistemas de alarme de vazamento de gás em cozinhas industriais</li>
+                <li>Monitoramento de fumaça em ambientes de armazenamento</li>
+                <li>Prevenção de incêndio em painéis elétricos e salas de máquinas</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Em uma cozinha industrial, o MQ-2 conectado a um ESP32 dispara uma notificação via MQTT para o celular do responsável assim que a concentração de gás ultrapassa o limite de segurança configurado.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Winsen Electronics (fabricante original do elemento sensor), Módulos: diversos fabricantes chinesas (Hanwei/compatíveis)</p>
+    </div>
+
+    <div class="ficha" data-nome="mq-135" data-categoria="gas">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorGas.svg" alt="Ícone MQ-135">
+            <div class="titulo">
+                <span class="categoria-tag">Gás</span>
+                <h2>MQ-135</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O MQ-135 é um sensor voltado para o monitoramento da qualidade do ar, sensível a amônia, óxidos de nitrogênio, benzeno, fumaça e CO2, entre outros gases poluentes.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>Assim como o MQ-2, baseia-se em um elemento de dióxido de estanho sensível a gases oxidantes/redutores. A resistência do elemento varia conforme a concentração de poluentes no ar, gerando uma tensão de saída proporcional que precisa de calibração para valores absolutos precisos.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>5V</td></tr>
+            <tr><th>Gases detectados</th><td>NH3, NOx, benzeno, fumaça, CO2 (qualidade do ar)</td></tr>
+            <tr><th>Faixa de detecção</th><td>10 a 1000 ppm (dependendo do gás)</td></tr>
+            <tr><th>Tempo de aquecimento</th><td>Necessita pré-aquecimento</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Analógico (e digital via comparador embutido no módulo)</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Monitoramento de qualidade do ar em ambientes industriais fechados</li>
+                <li>Sistemas de ventilação automatizada baseados em nível de poluentes</li>
+                <li>Estações de monitoramento ambiental urbano de baixo custo</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Um Raspberry Pi lê continuamente o MQ-135 em um galpão industrial e aciona automaticamente exaustores quando a qualidade do ar cai abaixo do nível aceitável.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Winsen Electronics (fabricante original do elemento sensor), Módulos: diversos fabricantes chineses compatíveis</p>
+    </div>
+
+    <div class="ficha" data-nome="sensor capacitivo de umidade do solo" data-categoria="solo">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorSolo.svg" alt="Ícone Sensor Capacitivo de Umidade do Solo">
+            <div class="titulo">
+                <span class="categoria-tag">Umidade do Solo</span>
+                <h2>Sensor Capacitivo de Umidade do Solo</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>Sensor usado em agricultura inteligente (smart farming) para medir a umidade presente no solo, permitindo irrigação automatizada e mais eficiente.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>Ao contrário dos sensores resistivos antigos, o modelo capacitivo mede a variação da constante dielétrica do solo em função da quantidade de água presente, sem eletrodos expostos em contato direto, o que reduz a corrosão e aumenta a vida útil do sensor.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>3,3V a 5,5V</td></tr>
+            <tr><th>Saída</th><td>Analógica (0 a ~3V, invertida: menor tensão = mais úmido)</td></tr>
+            <tr><th>Vida útil</th><td>Maior que sensores resistivos por não sofrer corrosão eletroquímica</td></tr>
+            <tr><th>Aplicação</th><td>Inserido diretamente no solo</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Analógico</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Irrigação automatizada em estufas e plantações (agricultura de precisão)</li>
+                <li>Monitoramento remoto de canteiros via IoT</li>
+                <li>Sistemas de alerta de solo seco em jardins verticais industriais</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Ligado a uma entrada analógica do Arduino, o sensor aciona uma eletroválvula de irrigação automaticamente sempre que a leitura indica solo seco, economizando água em relação à irrigação por horário fixo.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Fabricante genérico amplamente replicado (padrão v1.2/v2.0), Distribuído por DFRobot, HiLetgo, Keyestudio</p>
+    </div>
+
+    <div class="ficha" data-nome="sensor de chuva fc-37" data-categoria="chuva">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorChuva.svg" alt="Ícone Sensor de Chuva FC-37">
+            <div class="titulo">
+                <span class="categoria-tag">Chuva</span>
+                <h2>Sensor de Chuva FC-37</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O FC-37 (também chamado de sensor de gotas de chuva) detecta a presença de água em sua placa sensora, sendo usado para identificar chuva ou vazamentos.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>Possui uma placa com trilhas condutoras expostas. Quando gotas de água tocam a placa, elas formam um caminho de condução parcial entre as trilhas, reduzindo a resistência elétrica medida, o que é interpretado tanto de forma digital (limiar ajustável) quanto analógica (intensidade da chuva).</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>3,3V a 5V</td></tr>
+            <tr><th>Saída</th><td>Digital (com potenciômetro de ajuste) e analógica</td></tr>
+            <tr><th>Área sensora</th><td>Placa de trilhas expostas, precisa ficar ao ar livre</td></tr>
+            <tr><th>Uso típico</th><td>Detecção de chuva ou vazamento de água</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Analógico e Digital</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Fechamento automático de coberturas e toldos industriais em caso de chuva</li>
+                <li>Detecção de vazamentos de água próximo a painéis elétricos</li>
+                <li>Estações meteorológicas de baixo custo</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Instalado na cobertura de uma área de carga e descarga, o FC-37 aciona automaticamente o fechamento de uma lona motorizada assim que detecta as primeiras gotas de chuva.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Fabricante genérico amplamente replicado, Distribuído por HiLetgo, Elegoo, Keyestudio</p>
+    </div>
+
+    <div class="ficha" data-nome="sensor de nível (boia)" data-categoria="nivel">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorNivel.svg" alt="Ícone Sensor de Nível (Boia)">
+            <div class="titulo">
+                <span class="categoria-tag">Nível</span>
+                <h2>Sensor de Nível (Boia)</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>Sensor de nível do tipo boia (chave de nível) usado para detectar se o nível de um líquido está acima ou abaixo de um ponto de referência, muito comum em reservatórios industriais.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>Uma boia magnética flutua sobre o líquido e se move ao longo de uma haste. Dentro da haste existe um reed switch (interruptor magnético) que muda de estado (aberto/fechado) quando o ímã da boia passa por perto, indicando se o nível está acima ou abaixo daquele ponto.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de comutação</th><td>Depende do modelo, tipicamente até 100V/0,5A</td></tr>
+            <tr><th>Tipo de saída</th><td>Contato seco NA ou NF (reed switch)</td></tr>
+            <tr><th>Material</th><td>Geralmente PP ou PVC, resistente a líquidos diversos</td></tr>
+            <tr><th>Instalação</th><td>Vertical ou lateral, dependendo do modelo</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Digital (contato seco)</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Controle de nível mínimo/máximo em reservatórios de água industriais</li>
+                <li>Proteção de bombas contra funcionamento a seco (nível mínimo)</li>
+                <li>Alarme de transbordamento em tanques de processo</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Uma boia de nível instalada na parte inferior de uma caixa d'água desliga automaticamente a bomba (via relé controlado por um CLP) assim que o nível fica muito baixo, evitando que a bomba funcione sem água.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Fabricante genérico amplamente replicado, Versões industriais equivalentes: Endress+Hauser, Gems Sensors</p>
+    </div>
+
+    <div class="ficha" data-nome="sensor de fluxo yf-s201" data-categoria="fluxo">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorFluxo.svg" alt="Ícone Sensor de Fluxo YF-S201">
+            <div class="titulo">
+                <span class="categoria-tag">Fluxo</span>
+                <h2>Sensor de Fluxo YF-S201</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O YF-S201 é um sensor de vazão (fluxo) de água que mede a quantidade de líquido que passa por uma tubulação, muito usado em sistemas de irrigação e dosagem de água.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>Internamente possui uma pequena turbina (rotor) que gira conforme a água passa por ela. Um sensor de efeito Hall detecta a rotação da turbina e gera pulsos elétricos cuja frequência é proporcional à vazão de água, permitindo calcular o volume total escoado.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>5V a 24V</td></tr>
+            <tr><th>Faixa de vazão</th><td>1 a 30 L/min</td></tr>
+            <tr><th>Saída</th><td>Pulsos digitais (frequência proporcional à vazão)</td></tr>
+            <tr><th>Fator de conversão típico</th><td>Aprox. 450 pulsos por litro</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Digital (pulsos por efeito Hall)</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Dosagem automática de água em sistemas de irrigação</li>
+                <li>Medição de consumo de água em processos industriais</li>
+                <li>Sistemas de abastecimento automatizado de tanques com volume controlado</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Instalado na tubulação de entrada de um tanque de mistura, o YF-S201 permite que um Arduino conte os pulsos e feche a válvula solenoide automaticamente ao atingir o volume programado.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Fabricante genérico amplamente replicado, Distribuído por DFRobot, HiLetgo, Keyestudio</p>
+    </div>
+
+    <footer>
+        <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+    </footer>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

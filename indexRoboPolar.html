@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleDetalhe.css">
+    <link rel="shortcut icon" href="./imagens/logo_industriaConectada.svg" type="image/svg+xml">
+    <title>Robô Polar | Indústria Conectada</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./imagens/logo_industriaConectada.svg" alt="Logo Indústria Conectada" class="logo"
+                onclick="location.href='./index.html'">
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./indexRobos.html">Robôs Industriais</a>
+                <a href="./indexSensoresIoT.html">Sensores IoT</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
+                <a href="./indexGaleria.html">Galeria</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb"><a href="./index.html">Home</a> / <a href="./indexRobos.html">Robôs Industriais</a> / Robô Polar</div>
+
+    <h1>Robô Polar</h1>
+    <p class="subtitulo">Também chamado de robô esférico, combina rotação de base, inclinação de ombro e extensão linear do braço.</p>
+
+    <div class="indice">
+        <a href="#conceito">Conceito</a>
+        <a href="#funcionamento">Funcionamento</a>
+        <a href="#caracteristicas">Características técnicas</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#iot">Integração com IoT</a>
+        <a href="#modelos">Modelos comerciais</a>
+    </div>
+
+    <div class="ficha">
+        <div class="ficha-header">
+            <img src="./imagens/img_roboPolar.svg" alt="Ilustração Robô Polar">
+            <div class="titulo">
+                <span class="categoria-tag">Robô industrial</span>
+                <h2>Robô Polar</h2>
+            </div>
+        </div>
+
+        <h3 id="conceito">Conceito</h3>
+        <p>O robô Polar (ou esférico) foi um dos primeiros modelos industriais desenvolvidos e utiliza um sistema de coordenadas esféricas: uma junta rotativa na base (azimute), uma junta rotativa que inclina o braço (elevação) e uma junta linear que estende ou recolhe o braço (alcance radial).</p>
+
+        <h3 id="funcionamento">Princípio de funcionamento</h3>
+        <p>A base gira em torno do eixo vertical, um segundo motor inclina o 'ombro' do robô para cima ou para baixo, e um terceiro mecanismo (geralmente telescópico ou de correia) estende o braço radialmente. A combinação desses três movimentos gera uma área de trabalho em formato de porção de esfera, e por isso o modelo também é chamado de robô esférico.</p>
+
+        <h3 id="caracteristicas">Principais características técnicas</h3>
+        <table class="specs">
+            <tr><th>Graus de liberdade</th><td>3 eixos principais (2 rotativos + 1 linear), com possibilidade de eixos extras no punho</td></tr>
+            <tr><th>Repetibilidade típica</th><td>±0,1 mm a ±0,5 mm</td></tr>
+            <tr><th>Capacidade de carga</th><td>Média, variando conforme o porte</td></tr>
+            <tr><th>Área de trabalho</th><td>Formato esférico/setor de esfera</td></tr>
+            <tr><th>Relevância histórica</th><td>Um dos primeiros modelos cinemáticos usados na indústria (ex.: Unimate)</td></tr>
+        </table>
+
+        <h3 id="aplicacoes">Aplicações industriais</h3>
+        <ul>
+                <li>Manuseio de materiais em máquinas de fundição sob pressão</li>
+                <li>Solda a ponto em posições variadas ao redor de uma peça</li>
+                <li>Carga e descarga de máquinas em processos de forjamento</li>
+                <li>Movimentação de peças em ambientes com layout circular</li>
+                <li>Aplicações didáticas e de pesquisa em robótica (por sua importância histórica)</li>
+        </ul>
+
+        <h3 id="iot">Integração com automação e IoT</h3>
+        <p>Em linhas modernizadas, robôs polares originalmente analógicos recebem retrofit com encoders digitais e módulos de comunicação industrial, permitindo que seus dados de posição e ciclo sejam integrados a sistemas supervisórios via gateways Modbus-TCP/Profinet, uma prática comum de digitalização de parques industriais mais antigos dentro da Indústria 4.0.</p>
+
+        <h3 id="modelos">Modelos comerciais</h3>
+        <table class="modelos">
+            <thead>
+                <tr><th>Fabricante</th><th>Modelo</th><th>Destaque técnico</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>Stäubli</strong></td>
+                <td>Linha histórica de manipuladores esféricos</td>
+                <td>Base para diversos projetos de automação de fundição</td>
+            </tr>
+            <tr>
+                <td><strong>Yaskawa Motoman</strong></td>
+                <td>Manipuladores de coordenadas esféricas</td>
+                <td>Aplicações de forjamento e fundição sob pressão</td>
+            </tr>
+            <tr>
+                <td><strong>Unimation (referência histórica)</strong></td>
+                <td>Unimate</td>
+                <td>Primeiro robô industrial comercial, de cinemática polar</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+    </footer>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

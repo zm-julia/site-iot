@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleDetalhe.css">
+    <link rel="shortcut icon" href="./imagens/logo_industriaConectada.svg" type="image/svg+xml">
+    <title>Sensores de Luminosidade, Distância, Movimento e Proximidade | Indústria Conectada</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./imagens/logo_industriaConectada.svg" alt="Logo Indústria Conectada" class="logo"
+                onclick="location.href='./index.html'">
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./indexRobos.html">Robôs Industriais</a>
+                <a href="./indexSensoresIoT.html">Sensores IoT</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
+                <a href="./indexGaleria.html">Galeria</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb"><a href="./index.html">Home</a> / <a href="./indexSensoresIoT.html">Sensores IoT</a> / Sensores de Luminosidade, Distância, Movimento e Proximidade</div>
+
+    <h1>Sensores de Luminosidade, Distância, Movimento e Proximidade</h1>
+    <p class="subtitulo">Sensores que percebem luz, presença e distância de objetos, fundamentais para automação, segurança e detecção de peças em linhas de produção.</p>
+
+    <div class="filtro-barra">
+        <input type="text" id="buscaSensor" placeholder="Buscar sensor pelo nome (ex.: DHT11, MQ-2, HC-SR04)...">
+        <select id="filtroCategoria">
+<option value="todas">Todas as categorias</option>
+                <option value="luminosidade">Luminosidade</option>
+                <option value="distancia">Distância</option>
+                <option value="movimento">Movimento</option>
+                <option value="proximidade-indutivo">Proximidade Indutiva</option>
+                <option value="proximidade-capacitivo">Proximidade Capacitiva</option>
+        </select>
+    </div>
+
+    <p class="sem-resultado" id="semResultado">Nenhum sensor encontrado com esse filtro.</p>
+
+    <div class="ficha" data-nome="ldr" data-categoria="luminosidade">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorLuz.svg" alt="Ícone LDR">
+            <div class="titulo">
+                <span class="categoria-tag">Luminosidade</span>
+                <h2>LDR</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O LDR (Light Dependent Resistor) é um resistor cuja resistência elétrica diminui conforme a quantidade de luz incidente aumenta.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>É fabricado com um material fotossensível (geralmente sulfeto de cádmio) cuja resistência varia de forma não linear com a luminosidade: no escuro sua resistência pode chegar a centenas de kΩ, enquanto sob luz forte cai para poucas centenas de ohms. Ligado em um divisor de tensão, permite ler essa variação como uma tensão analógica.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Faixa de resistência</th><td>Aprox. 200 Ω (luz forte) a 1 MΩ (escuro)</td></tr>
+            <tr><th>Tensão de alimentação</th><td>Depende do circuito divisor de tensão utilizado</td></tr>
+            <tr><th>Tempo de resposta</th><td>Relativamente lento (dezenas de ms)</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Analógico</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Controle automático de iluminação pública e residencial</li>
+                <li>Ajuste de brilho de displays conforme a luz ambiente</li>
+                <li>Detecção simples de presença de luz/sombra em esteiras industriais</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Em um poste de iluminação automatizado, o LDR lido por uma entrada analógica do ESP32 aciona o relé da lâmpada automaticamente quando a luminosidade do ambiente cai abaixo de um limite.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Diversos fabricantes genéricos de componentes eletrônicos (ex.: Advanced Photonix, EXCELITAS)</p>
+    </div>
+
+    <div class="ficha" data-nome="bh1750" data-categoria="luminosidade">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorLuz.svg" alt="Ícone BH1750">
+            <div class="titulo">
+                <span class="categoria-tag">Luminosidade</span>
+                <h2>BH1750</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O BH1750 é um sensor digital de luminosidade que mede diretamente a intensidade luminosa em lux, com maior precisão e linearidade do que um LDR simples.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>Possui um fotodiodo e um conversor analógico-digital integrado que já entrega o valor de iluminância calculado internamente, transmitido ao microcontrolador via barramento I2C, dispensando cálculos de conversão no código.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>2,4V a 3,6V (módulos costumam ter regulador para 5V)</td></tr>
+            <tr><th>Faixa de medição</th><td>1 a 65535 lux</td></tr>
+            <tr><th>Resolução</th><td>1 lux</td></tr>
+            <tr><th>Interface</th><td>I2C</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Digital (I2C)</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Medição precisa de luminosidade para automação predial</li>
+                <li>Controle de estufas e ambientes de cultivo (fotoperíodo)</li>
+                <li>Sistemas de iluminação inteligente que ajustam luminárias por nível de lux</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Um ESP32 lê o BH1750 via I2C e publica o valor de luminosidade em lux para um broker MQTT, permitindo que um painel em nuvem acompanhe a iluminação de uma estufa em tempo real.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>ROHM Semiconductor (fabricante original do CI), Módulos: DFRobot, GY-30 (diversos fabricantes)</p>
+    </div>
+
+    <div class="ficha" data-nome="hc-sr04" data-categoria="distancia">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorDistancia.svg" alt="Ícone HC-SR04">
+            <div class="titulo">
+                <span class="categoria-tag">Distância</span>
+                <h2>HC-SR04</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O HC-SR04 é um sensor ultrassônico que mede a distância até um obstáculo com base no tempo que um pulso sonoro leva para ir e voltar.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>O módulo emite um pulso ultrassônico (40 kHz) pelo transdutor emissor e mede o tempo até o pulso refletido retornar ao transdutor receptor. Como a velocidade do som no ar é conhecida, o microcontrolador calcula a distância a partir desse intervalo de tempo.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>5V</td></tr>
+            <tr><th>Faixa de medição</th><td>2 cm a 400 cm</td></tr>
+            <tr><th>Precisão típica</th><td>±0,3 cm</td></tr>
+            <tr><th>Ângulo de medição</th><td>Aproximadamente 15°</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Digital (pulsos Trigger/Echo)</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Detecção de obstáculos em robôs móveis e AGVs</li>
+                <li>Medição de nível em tanques e silos</li>
+                <li>Sistemas de contagem e presença em portas automáticas industriais</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Fixado na lateral de uma esteira transportadora e ligado a um Arduino, o HC-SR04 detecta se uma caixa está posicionada corretamente antes de acionar o próximo estágio do processo.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Fabricante original chinês genérico (ITead/vários), Módulos amplamente distribuídos por HiLetgo, Elegoo, Keyestudio</p>
+    </div>
+
+    <div class="ficha" data-nome="pir hc-sr501" data-categoria="movimento">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorMovimento.svg" alt="Ícone PIR HC-SR501">
+            <div class="titulo">
+                <span class="categoria-tag">Movimento</span>
+                <h2>PIR HC-SR501</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O PIR (Passive Infrared) HC-SR501 é um sensor de movimento que detecta a variação de radiação infravermelha emitida por corpos quentes, como pessoas e animais, dentro do seu campo de visão.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>O sensor piroelétrico interno detecta mudanças no nível de radiação infravermelha captada por uma lente de Fresnel. Quando um corpo quente se move dentro do campo de visão, a variação de infravermelho gera um sinal digital de saída em nível alto.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>5V a 20V</td></tr>
+            <tr><th>Alcance de detecção</th><td>Até 7 metros (ajustável)</td></tr>
+            <tr><th>Ângulo de detecção</th><td>Aprox. 110° a 120°</td></tr>
+            <tr><th>Tempo de retenção do sinal</th><td>Ajustável de 5s a alguns minutos</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Digital</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Sistemas de segurança e alarme com detecção de presença</li>
+                <li>Iluminação automática em corredores e áreas de armazenamento</li>
+                <li>Contagem simples de entrada/saída de pessoas em ambientes industriais</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Instalado na entrada de um almoxarifado e ligado a um Arduino, o PIR aciona automaticamente a iluminação e registra o horário de cada movimento detectado em um cartão SD.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Fabricante original do módulo: várias empresas chinesas (design de referência aberto), Distribuído por HiLetgo, Elegoo, Keyestudio</p>
+    </div>
+
+    <div class="ficha" data-nome="sensor indutivo lj12a3" data-categoria="proximidade-indutivo">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorIndutivo.svg" alt="Ícone Sensor Indutivo LJ12A3">
+            <div class="titulo">
+                <span class="categoria-tag">Proximidade (Indutivo)</span>
+                <h2>Sensor Indutivo LJ12A3</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O sensor indutivo LJ12A3 detecta a presença de objetos metálicos sem contato físico, sendo amplamente usado em automação industrial para detecção de peças metálicas.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>Gera um campo eletromagnético de alta frequência em sua face sensora. Quando um objeto metálico se aproxima, esse campo induz correntes parasitas (correntes de Foucault) no metal, o que altera a amplitude do oscilador interno e é interpretado como detecção.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>6V a 36V DC</td></tr>
+            <tr><th>Distância de detecção</th><td>Tipicamente 4 mm</td></tr>
+            <tr><th>Saída</th><td>NPN ou PNP, normalmente aberto ou fechado</td></tr>
+            <tr><th>Grau de proteção</th><td>IP67 (resistente a poeira e água)</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Digital (saída NPN/PNP)</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Contagem de peças metálicas em linhas de produção</li>
+                <li>Detecção de fim de curso em cilindros pneumáticos com haste metálica</li>
+                <li>Verificação de presença de tampas ou peças metálicas antes de uma prensa</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Fixado próximo a uma esteira, o LJ12A3 conta automaticamente quantas peças metálicas passam por minuto, enviando pulsos para um CLP que acumula a contagem no supervisório.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Fabricante genérico amplamente replicado (padrão LJ12A3-4-Z/BX), Distribuído por Omron, Autonics, Baumer em versões industriais equivalentes</p>
+    </div>
+
+    <div class="ficha" data-nome="sensor capacitivo lj18a3" data-categoria="proximidade-capacitivo">
+        <div class="ficha-header">
+            <img src="./imagens/img_sensorCapacitivo.svg" alt="Ícone Sensor Capacitivo LJ18A3">
+            <div class="titulo">
+                <span class="categoria-tag">Proximidade (Capacitivo)</span>
+                <h2>Sensor Capacitivo LJ18A3</h2>
+            </div>
+        </div>
+
+        <h3>Conceito</h3>
+        <p>O sensor capacitivo LJ18A3 detecta a proximidade de qualquer material - metálico ou não, como plástico, vidro, madeira e líquidos - com base na variação de capacitância.</p>
+
+        <h3>Princípio de funcionamento</h3>
+        <p>A face do sensor funciona como uma das placas de um capacitor. Quando um objeto se aproxima (mesmo não metálico), ele altera a constante dielétrica do meio e, consequentemente, a capacitância do circuito oscilador, que é detectada e convertida em um sinal digital de saída.</p>
+
+        <h3>Principais especificações técnicas</h3>
+        <table class="specs">
+            <tr><th>Tensão de alimentação</th><td>6V a 36V DC</td></tr>
+            <tr><th>Distância de detecção</th><td>Tipicamente até 10 mm, ajustável por potenciômetro</td></tr>
+            <tr><th>Saída</th><td>NPN ou PNP</td></tr>
+            <tr><th>Aplicação típica</th><td>Detecção de sólidos e líquidos através de paredes não metálicas</td></tr>
+        </table>
+
+        <h3>Tipo de sinal</h3>
+        <p><span class="badge-sinal">Digital (saída NPN/PNP)</span></p>
+
+        <h3>Principais aplicações industriais ou IoT</h3>
+        <ul>
+                <li>Detecção de nível de líquidos através da parede de reservatórios plásticos</li>
+                <li>Verificação de presença de produtos não metálicos em embalagens</li>
+                <li>Contagem de objetos plásticos ou de vidro em linhas de envase</li>
+        </ul>
+
+        <h3>Exemplo de utilização em um projeto</h3>
+        <p>Instalado na lateral externa de um reservatório plástico, o LJ18A3 detecta quando o líquido atinge determinada altura, sem precisar de contato direto com o produto.</p>
+
+        <h3>Fabricantes / modelos comerciais</h3>
+        <p>Fabricante genérico amplamente replicado (padrão LJ18A3-8-Z/BX), Versões industriais equivalentes: Omron, Autonics, Pepperl+Fuchs</p>
+    </div>
+
+    <footer>
+        <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+    </footer>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

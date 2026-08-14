@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleDetalhe.css">
+    <link rel="shortcut icon" href="./imagens/logo_industriaConectada.svg" type="image/svg+xml">
+    <title>Robôs Industriais | Indústria Conectada</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./imagens/logo_industriaConectada.svg" alt="Logo Indústria Conectada" class="logo"
+                onclick="location.href='./index.html'">
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./indexRobos.html">Robôs Industriais</a>
+                <a href="./indexSensoresIoT.html">Sensores IoT</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
+                <a href="./indexGaleria.html">Galeria</a>
+            </nav>
+        </div>
+    </header>
+
+    <img src="./imagens/img_bannerRobos.svg" alt="Banner Modelos de Robôs Industriais" class="banner">
+
+    <div class="breadcrumb"><a href="./index.html">Home</a> / Robôs Industriais</div>
+
+    <h1>Modelos de Robôs Industriais</h1>
+    <p class="subtitulo">
+        Os robôs industriais são classificados principalmente pela sua <strong>cinemática</strong>,
+        ou seja, pela forma como os eixos se movem para posicionar a ferramenta de trabalho no
+        espaço. Escolha um modelo abaixo para ver conceito, princípio de funcionamento,
+        características técnicas, aplicações, integração com IoT e exemplos comerciais.
+    </p>
+
+    <div class="card-container">
+
+        <div class="card">
+            <img src="./imagens/img_roboCartesiano.svg" alt="Ícone Robô Cartesiano">
+            <h3>Robô Cartesiano</h3>
+            <p>Movimenta-se em três eixos lineares (X, Y, Z), como um pórtico. Ideal para
+                movimentos retos e de alta precisão.</p>
+            <button onclick="location.href='./indexRoboCartesiano.html'">Ver ficha técnica</button>
+        </div>
+
+        <div class="card">
+            <img src="./imagens/img_roboScara.svg" alt="Ícone Robô SCARA">
+            <h3>Robô SCARA</h3>
+            <p>Braço com dois eixos rotativos horizontais e um eixo vertical. Muito rápido em
+                movimentos de "pick and place".</p>
+            <button onclick="location.href='./indexRoboScara.html'">Ver ficha técnica</button>
+        </div>
+
+        <div class="card">
+            <img src="./imagens/img_roboArticulado.svg" alt="Ícone Robô Articulado">
+            <h3>Robô Articulado</h3>
+            <p>De 4 a 7 juntas rotativas, imitando um braço humano. O mais versátil dos modelos
+                industriais.</p>
+            <button onclick="location.href='./indexRoboArticulado.html'">Ver ficha técnica</button>
+        </div>
+
+        <div class="card">
+            <img src="./imagens/img_roboCilindrico.svg" alt="Ícone Robô Cilíndrico">
+            <h3>Robô Cilíndrico</h3>
+            <p>Combina uma junta rotativa na base com eixos lineares, gerando uma área de
+                trabalho em formato cilíndrico.</p>
+            <button onclick="location.href='./indexRoboCilindrico.html'">Ver ficha técnica</button>
+        </div>
+
+        <div class="card">
+            <img src="./imagens/img_roboDelta.svg" alt="Ícone Robô Delta">
+            <h3>Robô Delta</h3>
+            <p>Estrutura paralela suspensa, em formato de aranha. Extremamente rápido para
+                picking leve em linhas de produção.</p>
+            <button onclick="location.href='./indexRoboDelta.html'">Ver ficha técnica</button>
+        </div>
+
+        <div class="card">
+            <img src="./imagens/img_roboPolar.svg" alt="Ícone Robô Polar">
+            <h3>Robô Polar</h3>
+            <p>Também chamado esférico. Combina rotação de base, inclinação de ombro e
+                extensão linear do braço.</p>
+            <button onclick="location.href='./indexRoboPolar.html'">Ver ficha técnica</button>
+        </div>
+
+        <div class="card">
+            <img src="./imagens/img_roboColaborativo.svg" alt="Ícone Robô Colaborativo">
+            <h3>Robô Colaborativo</h3>
+            <p>Os "cobots" trabalham lado a lado com pessoas, com sensores de força e
+                segurança que interrompem o movimento em caso de contato.</p>
+            <button onclick="location.href='./indexRoboColaborativo.html'">Ver ficha técnica</button>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+    </footer>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

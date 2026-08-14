@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220">
+  <defs>
+    <linearGradient id="g_tens" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06304a"/>
+      <stop offset="100%" stop-color="#031824"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="214" height="214" rx="22" fill="url(#g_tens)" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/>
+  
+  <rect x="70" y="80" width="80" height="55" rx="10" fill="#4fd7ff"/>
+  <rect x="90" y="60" width="10" height="26" fill="#4fd7ff"/>
+  <rect x="120" y="60" width="10" height="26" fill="#4fd7ff"/>
+  <text x="110" y="118" font-size="24" text-anchor="middle" fill="#03141f" font-family="Arial" font-weight="bold">V</text>
+  <rect x="100" y="135" width="20" height="35" fill="#4fd7ff"/>
+
+</svg>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleDetalhe.css">
+    <link rel="shortcut icon" href="./imagens/logo_industriaConectada.svg" type="image/svg+xml">
+    <title>Robô Cilíndrico | Indústria Conectada</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./imagens/logo_industriaConectada.svg" alt="Logo Indústria Conectada" class="logo"
+                onclick="location.href='./index.html'">
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./indexRobos.html">Robôs Industriais</a>
+                <a href="./indexSensoresIoT.html">Sensores IoT</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
+                <a href="./indexGaleria.html">Galeria</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb"><a href="./index.html">Home</a> / <a href="./indexRobos.html">Robôs Industriais</a> / Robô Cilíndrico</div>
+
+    <h1>Robô Cilíndrico</h1>
+    <p class="subtitulo">Combina uma junta rotativa na base com movimentos lineares verticais e radiais, formando uma área de trabalho cilíndrica.</p>
+
+    <div class="indice">
+        <a href="#conceito">Conceito</a>
+        <a href="#funcionamento">Funcionamento</a>
+        <a href="#caracteristicas">Características técnicas</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#iot">Integração com IoT</a>
+        <a href="#modelos">Modelos comerciais</a>
+    </div>
+
+    <div class="ficha">
+        <div class="ficha-header">
+            <img src="./imagens/img_roboCilindrico.svg" alt="Ilustração Robô Cilíndrico">
+            <div class="titulo">
+                <span class="categoria-tag">Robô industrial</span>
+                <h2>Robô Cilíndrico</h2>
+            </div>
+        </div>
+
+        <h3 id="conceito">Conceito</h3>
+        <p>O robô cilíndrico possui uma junta rotativa (revoluta) na base, responsável por girar toda a coluna, e dois eixos prismáticos (lineares): um vertical, que sobe e desce a coluna, e outro radial, que estende ou recolhe o braço horizontalmente. O resultado é um volume de trabalho em formato de cilindro.</p>
+
+        <h3 id="funcionamento">Princípio de funcionamento</h3>
+        <p>O primeiro eixo gira a base em torno de um eixo vertical central (coordenada angular θ), o segundo eixo desloca a coluna para cima ou para baixo (coordenada Z) e o terceiro eixo estende o braço radialmente (coordenada r). Essa combinação de coordenadas cilíndricas simplifica o controle em aplicações onde o robô precisa alcançar prateleiras ou posições dispostas ao redor de um eixo central.</p>
+
+        <h3 id="caracteristicas">Principais características técnicas</h3>
+        <table class="specs">
+            <tr><th>Graus de liberdade</th><td>3 eixos principais (1 rotativo + 2 lineares), podendo ter eixo extra no punho</td></tr>
+            <tr><th>Repetibilidade típica</th><td>±0,1 mm a ±0,5 mm</td></tr>
+            <tr><th>Capacidade de carga</th><td>Média a alta, dependendo do porte</td></tr>
+            <tr><th>Área de trabalho</th><td>Formato cilíndrico</td></tr>
+            <tr><th>Vantagem estrutural</th><td>Boa rigidez no eixo vertical, ideal para cargas pesadas em movimento radial</td></tr>
+        </table>
+
+        <h3 id="aplicacoes">Aplicações industriais</h3>
+        <ul>
+                <li>Carga e descarga de máquinas CNC e centros de usinagem</li>
+                <li>Movimentação de peças entre estações dispostas em círculo</li>
+                <li>Manuseio de material em fundição sob alta temperatura</li>
+                <li>Operações de solda em posições ao redor de uma peça central</li>
+                <li>Armazenamento e recuperação automatizada de itens em estantes cilíndricas</li>
+        </ul>
+
+        <h3 id="iot">Integração com automação e IoT</h3>
+        <p>Sensores de fim de curso e encoders absolutos nos três eixos permitem que o robô cilíndrico reporte sua posição exata a controladores lógicos programáveis (CLPs), que por sua vez publicam esses dados em redes industriais Ethernet Industrial ou Profinet. Isso viabiliza a supervisão remota do ciclo de trabalho e alarmes automáticos quando o tempo de ciclo foge do padrão esperado.</p>
+
+        <h3 id="modelos">Modelos comerciais</h3>
+        <table class="modelos">
+            <thead>
+                <tr><th>Fabricante</th><th>Modelo</th><th>Destaque técnico</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>Seiko Epson</strong></td>
+                <td>Robôs cilíndricos de carga/descarga CNC</td>
+                <td>Integração direta com centros de usinagem</td>
+            </tr>
+            <tr>
+                <td><strong>Yaskawa Motoman</strong></td>
+                <td>Linha de manipuladores cilíndricos industriais</td>
+                <td>Alta robustez para ambientes de fundição</td>
+            </tr>
+            <tr>
+                <td><strong>Kawasaki Robotics</strong></td>
+                <td>Séries de manipuladores de eixo cilíndrico</td>
+                <td>Boa relação carga útil x alcance radial</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+    </footer>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

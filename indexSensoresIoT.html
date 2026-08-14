@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleDetalhe.css">
+    <link rel="shortcut icon" href="./imagens/logo_industriaConectada.svg" type="image/svg+xml">
+    <title>Sensores IoT e Industriais | Indústria Conectada</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./imagens/logo_industriaConectada.svg" alt="Logo Indústria Conectada" class="logo"
+                onclick="location.href='./index.html'">
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./indexRobos.html">Robôs Industriais</a>
+                <a href="./indexSensoresIoT.html">Sensores IoT</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
+                <a href="./indexGaleria.html">Galeria</a>
+            </nav>
+        </div>
+    </header>
+
+    <img src="./imagens/img_bannerSensores.svg" alt="Banner Sensores para IoT e Automação" class="banner">
+
+    <div class="breadcrumb"><a href="./index.html">Home</a> / Sensores IoT</div>
+
+    <h1>Sensores para IoT e Automação Industrial</h1>
+    <p class="subtitulo">
+        Um catálogo técnico com mais de 20 sensores usados em projetos de Internet das Coisas e
+        automação industrial, com conceito, funcionamento, especificações, tipo de sinal e
+        exemplos de programação em Arduino.
+    </p>
+
+    <div class="indice">
+        <a href="#sensoriamento">Sensoriamento</a>
+        <a href="#automacao">Automação Industrial</a>
+        <a href="#relacao">Sensores &amp; Controle</a>
+        <a href="#arduino">Arduino</a>
+        <a href="#programacao">Exemplos de Programação</a>
+        <a href="#simulador">Simulador</a>
+        <a href="#categorias">Catálogo por categoria</a>
+    </div>
+
+    <div class="ficha">
+        <h3 id="sensoriamento">O que é Sensoriamento</h3>
+        <p>
+            Sensoriamento é o processo de captar grandezas físicas do ambiente ou de um processo
+            - como temperatura, luminosidade, distância, presença, vibração ou corrente elétrica
+            - e transformá-las em sinais elétricos que possam ser lidos, interpretados e
+            processados por um sistema eletrônico. É a "porta de entrada" de qualquer sistema
+            automatizado: sem sensores, um microcontrolador ou CLP não teria como saber o que
+            está acontecendo no mundo real.
+        </p>
+
+        <h3 id="automacao">A importância dos sensores na Automação Industrial</h3>
+        <p>
+            Em um processo automatizado, os sensores são responsáveis por fornecer os dados que
+            alimentam a tomada de decisão do sistema de controle. Sem eles, um CLP ou
+            microcontrolador estaria "cego", incapaz de reagir a mudanças reais no processo.
+            Sensores bem escolhidos e calibrados aumentam a qualidade do produto final, reduzem
+            desperdício de matéria-prima e energia, previnem acidentes (por exemplo, detectando
+            vazamento de gás ou presença de pessoas em áreas de risco) e permitem que a
+            manutenção seja feita de forma preditiva, antes que uma falha pare a produção.
+        </p>
+
+        <h3 id="relacao">A relação entre sensores, comunicação de dados e controle de processos</h3>
+        <p>
+            O ciclo básico de qualquer sistema automatizado segue três etapas: <strong>sensoriamento</strong>
+            (o sensor mede uma grandeza física), <strong>comunicação de dados</strong> (o valor lido é
+            transmitido - por um barramento local como I2C/SPI, por uma rede industrial como
+            Profinet/Modbus, ou pela internet via MQTT/HTTP) e <strong>controle</strong> (um
+            microcontrolador, CLP ou sistema em nuvem decide uma ação com base no dado recebido,
+            como ligar um motor, abrir uma válvula ou emitir um alerta). Na Internet das Coisas,
+            esse ciclo se repete continuamente e em rede, permitindo que decisões sejam tomadas
+            remotamente e que o histórico de dados seja usado para análises futuras.
+        </p>
+
+        <h3 id="arduino">Arduino — Conceito, funcionamento e programação</h3>
+        <p>
+            O Arduino é uma plataforma de prototipagem eletrônica de código aberto, composta por
+            uma placa com um microcontrolador (como o ATmega328P na placa Arduino Uno) e por um
+            ambiente de desenvolvimento (IDE) que usa uma linguagem baseada em C/C++ simplificada.
+            Ele permite ler sinais de sensores em suas entradas digitais e analógicas, processar
+            essas informações em um programa (chamado "sketch") e controlar atuadores - como
+            relés, motores e LEDs - em suas saídas, sendo a porta de entrada mais comum para
+            projetos de eletrônica embarcada e IoT. Placas como o <strong>ESP32</strong> seguem a
+            mesma lógica de programação do Arduino, mas já trazem Wi-Fi e Bluetooth integrados,
+            o que facilita a conexão dos sensores à internet.
+        </p>
+        <p>
+            Um programa Arduino é estruturado em duas funções principais: <code>setup()</code>,
+            executada uma única vez quando a placa liga (usada para configurar pinos e
+            comunicação serial), e <code>loop()</code>, que roda repetidamente enquanto a placa
+            estiver ligada (usada para ler sensores e tomar decisões continuamente).
+        </p>
+    </div>
+
+    <div class="ficha" id="programacao">
+        <h3>Exemplos de Programação (mínimo de 10 sensores)</h3>
+        <p>
+            Abaixo estão exemplos simplificados de leitura, em Arduino, de dez sensores diferentes
+            apresentados neste catálogo. Cada exemplo traz comentários explicando a rotina
+            principal.
+        </p>
+
+        <h3>1. DHT11 — Temperatura e Umidade</h3>
+        <pre class="codigo"><span class="cm">// Requer a biblioteca "DHT sensor library" (Adafruit)</span>
+<span class="kw">#include</span> &lt;DHT.h&gt;
+
+<span class="kw">#define</span> PINO_DHT 2
+DHT dht(PINO_DHT, DHT11);
+
+<span class="fn">void</span> setup() {
+  Serial.begin(9600);
+  dht.begin();               <span class="cm">// inicializa o sensor</span>
+}
+
+<span class="fn">void</span> loop() {
+  float umidade = dht.readHumidity();
+  float temperatura = dht.readTemperature();
+
+  Serial.print("Temperatura: ");
+  Serial.print(temperatura);
+  Serial.print(" C  |  Umidade: ");
+  Serial.print(umidade);
+  Serial.println(" %");
+
+  delay(2000);                <span class="cm">// aguarda antes da próxima leitura</span>
+}</pre>
+
+        <h3>2. LM35 — Temperatura analógica</h3>
+        <pre class="codigo"><span class="kw">#define</span> PINO_LM35 A0
+
+<span class="fn">void</span> setup() {
+  Serial.begin(9600);
+}
+
+<span class="fn">void</span> loop() {
+  int leituraADC = analogRead(PINO_LM35);
+  <span class="cm">// converte a leitura de 0-1023 para tensão e depois para graus Celsius</span>
+  float tensao = (leituraADC * 5.0) / 1023.0;
+  float temperaturaC = tensao * 100.0;
+
+  Serial.print("Temperatura: ");
+  Serial.print(temperaturaC);
+  Serial.println(" C");
+
+  delay(1000);
+}</pre>
+
+        <h3>3. HC-SR04 — Distância por ultrassom</h3>
+        <pre class="codigo"><span class="kw">#define</span> PINO_TRIGGER 9
+<span class="kw">#define</span> PINO_ECHO 10
+
+<span class="fn">void</span> setup() {
+  Serial.begin(9600);
+  pinMode(PINO_TRIGGER, OUTPUT);
+  pinMode(PINO_ECHO, INPUT);
+}
+
+<span class="fn">void</span> loop() {
+  <span class="cm">// envia o pulso ultrassônico de 10 microssegundos</span>
+  digitalWrite(PINO_TRIGGER, LOW);
+  delayMicroseconds(2);
+  digitalWrite(PINO_TRIGGER, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(PINO_TRIGGER, LOW);
+
+  long duracao = pulseIn(PINO_ECHO, HIGH);
+  float distanciaCm = duracao * 0.034 / 2;  <span class="cm">// converte tempo em distância</span>
+
+  Serial.print("Distância: ");
+  Serial.print(distanciaCm);
+  Serial.println(" cm");
+
+  delay(500);
+}</pre>
+
+        <h3>4. LDR — Luminosidade</h3>
+        <pre class="codigo"><span class="kw">#define</span> PINO_LDR A1
+<span class="kw">#define</span> PINO_RELE_LUZ 7
+
+<span class="fn">void</span> setup() {
+  Serial.begin(9600);
+  pinMode(PINO_RELE_LUZ, OUTPUT);
+}
+
+<span class="fn">void</span> loop() {
+  int luminosidade = analogRead(PINO_LDR);
+  Serial.println(luminosidade);
+
+  <span class="cm">// liga a iluminação automaticamente quando escurece</span>
+  if (luminosidade < 300) {
+    digitalWrite(PINO_RELE_LUZ, HIGH);
+  } else {
+    digitalWrite(PINO_RELE_LUZ, LOW);
+  }
+
+  delay(500);
+}</pre>
+
+        <h3>5. PIR HC-SR501 — Detecção de movimento</h3>
+        <pre class="codigo"><span class="kw">#define</span> PINO_PIR 3
+
+<span class="fn">void</span> setup() {
+  Serial.begin(9600);
+  pinMode(PINO_PIR, INPUT);
+}
+
+<span class="fn">void</span> loop() {
+  int movimento = digitalRead(PINO_PIR);
+
+  if (movimento == HIGH) {
+    Serial.println("Movimento detectado!");
+  }
+
+  delay(200);
+}</pre>
+
+        <h3>6. MQ-2 — Gás e fumaça</h3>
+        <pre class="codigo"><span class="kw">#define</span> PINO_MQ2 A2
+<span class="kw">#define</span> LIMITE_ALARME 400
+
+<span class="fn">void</span> setup() {
+  Serial.begin(9600);
+}
+
+<span class="fn">void</span> loop() {
+  int nivelGas = analogRead(PINO_MQ2);
+  Serial.print("Nível de gás: ");
+  Serial.println(nivelGas);
+
+  <span class="cm">// dispara alarme se ultrapassar o limite de segurança</span>
+  if (nivelGas > LIMITE_ALARME) {
+    Serial.println("ALERTA: possível vazamento de gás!");
+  }
+
+  delay(1000);
+}</pre>
+
+        <h3>7. ACS712 — Corrente elétrica</h3>
+        <pre class="codigo"><span class="kw">#define</span> PINO_ACS712 A3
+<span class="kw">const</span> float SENSIBILIDADE = 0.185; <span class="cm">// V/A do modelo de 5A</span>
+
+<span class="fn">void</span> setup() {
+  Serial.begin(9600);
+}
+
+<span class="fn">void</span> loop() {
+  int leitura = analogRead(PINO_ACS712);
+  float tensao = (leitura * 5.0) / 1023.0;
+  <span class="cm">// 2.5V representa corrente zero no ACS712 (offset do sensor)</span>
+  float corrente = (tensao - 2.5) / SENSIBILIDADE;
+
+  Serial.print("Corrente: ");
+  Serial.print(corrente);
+  Serial.println(" A");
+
+  delay(500);
+}</pre>
+
+        <h3>8. SW-420 — Vibração</h3>
+        <pre class="codigo"><span class="kw">#define</span> PINO_VIBRACAO 4
+
+<span class="fn">void</span> setup() {
+  Serial.begin(9600);
+  pinMode(PINO_VIBRACAO, INPUT);
+}
+
+<span class="fn">void</span> loop() {
+  int vibrou = digitalRead(PINO_VIBRACAO);
+
+  if (vibrou == HIGH) {
+    Serial.println("Vibração detectada - verificar equipamento!");
+  }
+
+  delay(100);
+}</pre>
+
+        <h3>9. Sensor Hall A3144 — Contagem de rotação (RPM)</h3>
+        <pre class="codigo"><span class="kw">#define</span> PINO_HALL 2
+<span class="fn">volatile</span> <span class="fn">int</span> contadorPulsos = 0;
+
+<span class="fn">void</span> contarPulso() {
+  contadorPulsos++;   <span class="cm">// executado a cada volta do eixo (interrupção)</span>
+}
+
+<span class="fn">void</span> setup() {
+  Serial.begin(9600);
+  pinMode(PINO_HALL, INPUT);
+  attachInterrupt(digitalPinToInterrupt(PINO_HALL), contarPulso, FALLING);
+}
+
+<span class="fn">void</span> loop() {
+  delay(1000); <span class="cm">// janela de 1 segundo para calcular RPM</span>
+  int rpm = contadorPulsos * 60;
+  Serial.print("Rotação: ");
+  Serial.print(rpm);
+  Serial.println(" RPM");
+  contadorPulsos = 0;
+}</pre>
+
+        <h3>10. Módulo RFID MFRC522 — Identificação</h3>
+        <pre class="codigo"><span class="cm">// Requer a biblioteca "MFRC522" (miguelbalboa)</span>
+<span class="kw">#include</span> &lt;SPI.h&gt;
+<span class="kw">#include</span> &lt;MFRC522.h&gt;
+
+<span class="kw">#define</span> PINO_SS 10
+<span class="kw">#define</span> PINO_RST 9
+MFRC522 leitor(PINO_SS, PINO_RST);
+
+<span class="fn">void</span> setup() {
+  Serial.begin(9600);
+  SPI.begin();
+  leitor.PCD_Init();
+}
+
+<span class="fn">void</span> loop() {
+  <span class="cm">// verifica se um novo cartão foi aproximado do leitor</span>
+  if (leitor.PICC_IsNewCardPresent() && leitor.PICC_ReadCardSerial()) {
+    Serial.print("Cartão detectado, UID: ");
+    for (byte i = 0; i < leitor.uid.size; i++) {
+      Serial.print(leitor.uid.uidByte[i], HEX);
+    }
+    Serial.println();
+    leitor.PICC_HaltA();
+  }
+}</pre>
+    </div>
+
+    <div class="destaque" id="simulador">
+        <h2>🔬 Simulador de leitura de sensores</h2>
+        <p>
+            Recurso interativo para visualizar, na prática, como um microcontrolador recebe
+            leituras de diferentes sensores ao longo do tempo. Escolha um sensor e clique em
+            "Simular leitura" para gerar uma amostra (valores meramente ilustrativos, gerados no
+            navegador).
+        </p>
+        <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin: 16px 0;">
+            <select id="sensorSimulado" style="padding:10px 14px; border-radius:24px; border:1px solid rgba(79,215,255,0.4); background:#150a3d; color:#fff;">
+                <option value="dht11">Temperatura (DHT11)</option>
+                <option value="ldr">Luminosidade (LDR)</option>
+                <option value="hcsr04">Distância (HC-SR04)</option>
+                <option value="mq2">Gás/Fumaça (MQ-2)</option>
+                <option value="acs712">Corrente elétrica (ACS712)</option>
+            </select>
+            <button id="botaoSimular" type="button">Simular leitura</button>
+        </div>
+        <div id="saidaSimulador"></div>
+    </div>
+
+    <h1 id="categorias">Catálogo de sensores por categoria</h1>
+    <p class="subtitulo">Mais de 20 sensores organizados em 5 grupos temáticos.</p>
+
+    <div class="card-container">
+
+        <div class="card">
+            <img src="./imagens/img_sensorTermometro.svg" alt="Ícone Temperatura e Umidade">
+            <h3>Temperatura e Umidade</h3>
+            <p>DHT11, DHT22, LM35 e DS18B20 — medição térmica e de umidade do ar.</p>
+            <button onclick="location.href='./indexSensTempUmid.html'">Ver sensores</button>
+        </div>
+
+        <div class="card">
+            <img src="./imagens/img_sensorDistancia.svg" alt="Ícone Luminosidade, Distância, Movimento e Proximidade">
+            <h3>Luz, Distância, Movimento e Proximidade</h3>
+            <p>LDR, BH1750, HC-SR04, PIR HC-SR501, LJ12A3 e LJ18A3.</p>
+            <button onclick="location.href='./indexSensLuzMovProx.html'">Ver sensores</button>
+        </div>
+
+        <div class="card">
+            <img src="./imagens/img_sensorGas.svg" alt="Ícone Gás, Solo, Chuva, Nível e Fluxo">
+            <h3>Gás, Solo, Chuva, Nível e Fluxo</h3>
+            <p>MQ-2, MQ-135, umidade do solo, FC-37, boia de nível e YF-S201.</p>
+            <button onclick="location.href='./indexSensAmbiente.html'">Ver sensores</button>
+        </div>
+
+        <div class="card">
+            <img src="./imagens/img_sensorCorrente.svg" alt="Ícone Sensores Elétricos e Mecânicos">
+            <h3>Elétricos e Mecânicos</h3>
+            <p>ACS712, ZMPT101B, SW-420, Hall A3144 e Encoder KY-040.</p>
+            <button onclick="location.href='./indexSensEletroMec.html'">Ver sensores</button>
+        </div>
+
+        <div class="card">
+            <img src="./imagens/img_sensorRFID.svg" alt="Ícone Identificação, Peso, Som e Chama">
+            <h3>Identificação, Peso, Som e Chama</h3>
+            <p>RFID MFRC522, célula de carga + HX711, KY-037 e sensor de chama IR.</p>
+            <button onclick="location.href='./indexSensOutros.html'">Ver sensores</button>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+    </footer>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

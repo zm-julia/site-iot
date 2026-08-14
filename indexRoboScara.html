@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleDetalhe.css">
+    <link rel="shortcut icon" href="./imagens/logo_industriaConectada.svg" type="image/svg+xml">
+    <title>Robô SCARA | Indústria Conectada</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./imagens/logo_industriaConectada.svg" alt="Logo Indústria Conectada" class="logo"
+                onclick="location.href='./index.html'">
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./indexRobos.html">Robôs Industriais</a>
+                <a href="./indexSensoresIoT.html">Sensores IoT</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
+                <a href="./indexGaleria.html">Galeria</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb"><a href="./index.html">Home</a> / <a href="./indexRobos.html">Robôs Industriais</a> / Robô SCARA</div>
+
+    <h1>Robô SCARA</h1>
+    <p class="subtitulo">SCARA significa Selective Compliance Assembly Robot Arm: dois eixos rotativos horizontais e um eixo linear vertical, otimizado para velocidade.</p>
+
+    <div class="indice">
+        <a href="#conceito">Conceito</a>
+        <a href="#funcionamento">Funcionamento</a>
+        <a href="#caracteristicas">Características técnicas</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#iot">Integração com IoT</a>
+        <a href="#modelos">Modelos comerciais</a>
+    </div>
+
+    <div class="ficha">
+        <div class="ficha-header">
+            <img src="./imagens/img_roboScara.svg" alt="Ilustração Robô SCARA">
+            <div class="titulo">
+                <span class="categoria-tag">Robô industrial</span>
+                <h2>Robô SCARA</h2>
+            </div>
+        </div>
+
+        <h3 id="conceito">Conceito</h3>
+        <p>O robô SCARA possui uma estrutura em que dois elos giram em um plano horizontal (como dois segmentos de um braço apontando para a mesa) e um terceiro eixo se move verticalmente para descer e subir a ferramenta. Seu nome vem da característica de ser rígido no eixo vertical e complacente (levemente flexível) no plano horizontal, o que facilita o encaixe de peças.</p>
+
+        <h3 id="funcionamento">Princípio de funcionamento</h3>
+        <p>Os dois primeiros elos giram em torno de eixos verticais paralelos, posicionando o punho em qualquer ponto do plano X-Y dentro do alcance do braço. O terceiro eixo desce/sobe linearmente (eixo Z) e, em muitos modelos, um quarto eixo permite a rotação da ferramenta (eixo de guinada). Essa geometria reduz a inércia do conjunto, permitindo ciclos de trabalho muito rápidos.</p>
+
+        <h3 id="caracteristicas">Principais características técnicas</h3>
+        <table class="specs">
+            <tr><th>Graus de liberdade</th><td>4 eixos (2 rotativos horizontais + 1 linear vertical + 1 rotação de punho)</td></tr>
+            <tr><th>Repetibilidade típica</th><td>±0,01 mm a ±0,02 mm</td></tr>
+            <tr><th>Velocidade de ciclo</th><td>Muito alta, ideal para tarefas repetitivas de curta duração</td></tr>
+            <tr><th>Capacidade de carga</th><td>1 kg a 20 kg, tipicamente</td></tr>
+            <tr><th>Alcance horizontal</th><td>300 mm a 1200 mm</td></tr>
+            <tr><th>Área de trabalho</th><td>Formato circular/anelar no plano horizontal</td></tr>
+        </table>
+
+        <h3 id="aplicacoes">Aplicações industriais</h3>
+        <ul>
+                <li>Montagem eletrônica (inserção de componentes, parafusamento)</li>
+                <li>Pick and place de alta velocidade em linhas de embalagem</li>
+                <li>Dispensação de cola e solda em placas de circuito</li>
+                <li>Testes e inspeção de peças pequenas</li>
+                <li>Manuseio de peças em processos de injeção plástica</li>
+        </ul>
+
+        <h3 id="iot">Integração com automação e IoT</h3>
+        <p>Controladoras SCARA costumam se comunicar via EtherCAT ou protocolos proprietários com módulos de I/O remoto, permitindo que sensores de visão computacional e sensores de presença guiem o robô em tempo real. Dados de ciclo, tempo de tato (takt time) e falhas são enviados a sistemas MES/SCADA, possibilitando dashboards de OEE (eficiência global do equipamento) alimentados via OPC UA.</p>
+
+        <h3 id="modelos">Modelos comerciais</h3>
+        <table class="modelos">
+            <thead>
+                <tr><th>Fabricante</th><th>Modelo</th><th>Destaque técnico</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>EPSON Robots</strong></td>
+                <td>G-Series (G6, G10, G20)</td>
+                <td>Alta velocidade e precisão para montagem eletrônica</td>
+            </tr>
+            <tr>
+                <td><strong>Yamaha Robotics</strong></td>
+                <td>YK-XG Series</td>
+                <td>Braço leve, controlador compacto integrado</td>
+            </tr>
+            <tr>
+                <td><strong>FANUC</strong></td>
+                <td>SR-3iA / SR-6iA</td>
+                <td>Ciclos ultrarrápidos com controlador R-30iB</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+    </footer>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

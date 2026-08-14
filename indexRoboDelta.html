@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleDetalhe.css">
+    <link rel="shortcut icon" href="./imagens/logo_industriaConectada.svg" type="image/svg+xml">
+    <title>Robô Delta | Indústria Conectada</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./imagens/logo_industriaConectada.svg" alt="Logo Indústria Conectada" class="logo"
+                onclick="location.href='./index.html'">
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./indexRobos.html">Robôs Industriais</a>
+                <a href="./indexSensoresIoT.html">Sensores IoT</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
+                <a href="./indexGaleria.html">Galeria</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb"><a href="./index.html">Home</a> / <a href="./indexRobos.html">Robôs Industriais</a> / Robô Delta</div>
+
+    <h1>Robô Delta</h1>
+    <p class="subtitulo">Estrutura paralela suspensa, em formato de aranha, projetada para movimentos extremamente rápidos e leves.</p>
+
+    <div class="indice">
+        <a href="#conceito">Conceito</a>
+        <a href="#funcionamento">Funcionamento</a>
+        <a href="#caracteristicas">Características técnicas</a>
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#iot">Integração com IoT</a>
+        <a href="#modelos">Modelos comerciais</a>
+    </div>
+
+    <div class="ficha">
+        <div class="ficha-header">
+            <img src="./imagens/img_roboDelta.svg" alt="Ilustração Robô Delta">
+            <div class="titulo">
+                <span class="categoria-tag">Robô industrial</span>
+                <h2>Robô Delta</h2>
+            </div>
+        </div>
+
+        <h3 id="conceito">Conceito</h3>
+        <p>O robô Delta é um manipulador de cinemática paralela: em vez de elos ligados em série (como no robô articulado), ele possui três braços leves conectados em paralelo a uma base fixa superior e a uma plataforma móvel inferior, onde fica o efetuador final. Essa configuração reduz drasticamente a massa em movimento, permitindo acelerações muito altas.</p>
+
+        <h3 id="funcionamento">Princípio de funcionamento</h3>
+        <p>Três motores fixos na base superior giram braços que, por meio de hastes paralelas leves (geralmente em fibra de carbono), sustentam a plataforma inferior sempre na mesma orientação. Como os motores ficam parados na base (não se movem junto com o efetuador), a inércia é baixa e o robô consegue executar centenas de ciclos por minuto, sendo um dos modelos mais rápidos da indústria.</p>
+
+        <h3 id="caracteristicas">Principais características técnicas</h3>
+        <table class="specs">
+            <tr><th>Graus de liberdade</th><td>3 translações (X, Y, Z), podendo ter 4º eixo de rotação no efetuador</td></tr>
+            <tr><th>Velocidade</th><td>Até dezenas de ciclos por segundo em peças leves</td></tr>
+            <tr><th>Capacidade de carga</th><td>Tipicamente até 1-9 kg (aplicações leves)</td></tr>
+            <tr><th>Repetibilidade típica</th><td>±0,1 mm</td></tr>
+            <tr><th>Área de trabalho</th><td>Disco/cone suspenso abaixo da base</td></tr>
+            <tr><th>Vantagem estrutural</th><td>Baixa inércia, altíssima aceleração</td></tr>
+        </table>
+
+        <h3 id="aplicacoes">Aplicações industriais</h3>
+        <ul>
+                <li>Picking de alta velocidade na indústria alimentícia e farmacêutica</li>
+                <li>Empacotamento de produtos leves em esteiras rápidas</li>
+                <li>Triagem e classificação de peças pequenas com visão computacional</li>
+                <li>Montagem de componentes eletrônicos leves</li>
+                <li>Aplicações que exigem sincronismo com esteiras transportadoras (tracking)</li>
+        </ul>
+
+        <h3 id="iot">Integração com automação e IoT</h3>
+        <p>Robôs Delta trabalham quase sempre integrados a sistemas de visão computacional que localizam as peças na esteira e enviam coordenadas em tempo real ao controlador via Ethernet industrial. Essa combinação visão + robô + esteira é um exemplo clássico de sistema ciber-físico da Indústria 4.0, com dados de contagem de peças e taxa de acerto disponibilizados a sistemas MES para acompanhamento da produtividade da linha.</p>
+
+        <h3 id="modelos">Modelos comerciais</h3>
+        <table class="modelos">
+            <thead>
+                <tr><th>Fabricante</th><th>Modelo</th><th>Destaque técnico</th></tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>ABB</strong></td>
+                <td>IRB 360 FlexPicker</td>
+                <td>Referência em picking de alta velocidade com visão integrada</td>
+            </tr>
+            <tr>
+                <td><strong>FANUC</strong></td>
+                <td>M-3iA</td>
+                <td>Robô Delta compacto para aplicações leves em linha</td>
+            </tr>
+            <tr>
+                <td><strong>Omron (Adept)</strong></td>
+                <td>Hornet 565</td>
+                <td>Ciclos ultrarrápidos para embalagem</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+    </footer>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>
