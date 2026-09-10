@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleDetalhe.css">
+    <link rel="shortcut icon" href="./imagens/logo_industriaConectada.svg" type="image/svg+xml">
+    <title>Desafios de Sensoriamento (Tinkercad) | Indústria Conectada</title>
+
+    <style>
+        .video-espaco {
+            margin-top: 14px;
+            border: 2px dashed rgba(79, 215, 255, 0.45);
+            border-radius: 14px;
+            background: rgba(79, 215, 255, 0.05);
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            max-width: 720px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 8px;
+            padding: 20px;
+            color: #9aa0d8;
+        }
+        .video-espaco svg { opacity: 0.6; }
+        .video-espaco strong { color: #cfe9ff; font-size: 0.95rem; }
+        .video-espaco span { font-size: 0.82rem; max-width: 420px; }
+        .circuito-imagem {
+            background: #f4f6fb;
+            border-radius: 12px;
+            padding: 14px;
+            margin: 10px 0 4px;
+            overflow-x: auto;
+        }
+        .circuito-imagem img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 6px;
+        }
+        .monitor-imagem {
+            background: #0b0f1c;
+            border: 1px solid rgba(79, 215, 255, 0.3);
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0 4px;
+            overflow-x: auto;
+        }
+        .monitor-imagem img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./imagens/logo_industriaConectada.svg" alt="Logo Indústria Conectada" class="logo"
+                onclick="location.href='./index.html'">
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./indexRobos.html">Robôs Industriais</a>
+                <a href="./indexSensoresIoT.html">Sensores IoT</a>
+                <a href="./indexTinkercad.html">Projetos Tinkercad</a>
+                <a href="./indexGaleria.html">Galeria</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb"><a href="./index.html">Home</a> / <a href="./indexSensoresIoT.html">Sensores IoT</a> / Projetos (Tinkercad)</div>
+
+    <h1>Desafios de Sensoriamento — Tinkercad</h1>
+    <p class="subtitulo">
+        Três desafios práticos de sensoriamento montados e simulados no
+        <strong>Tinkercad Circuits</strong> com Arduino Uno, aplicando na prática os conceitos de
+        leitura de sensores, tomada de decisão e comunicação de dados apresentados neste catálogo.
+        Cada desafio traz o circuito montado, o código em C++ comentado e um espaço reservado
+        para o vídeo de demonstração.
+    </p>
+
+    <div class="indice">
+        <a href="#desafio1">Desafio 1 — Iluminação Inteligente</a>
+        <a href="#desafio2">Desafio 2 — Estacionamento Inteligente</a>
+        <a href="#desafio3">Desafio 3 — Ambiente Inteligente</a>
+    </div>
+
+    <!-- ===================== DESAFIO 1 ===================== -->
+    <div class="ficha" id="desafio1">
+        <div class="ficha-header">
+            <div class="titulo">
+                <span class="categoria-tag">Desafio 1</span>
+                <h2>Iluminação Inteligente</h2>
+            </div>
+        </div>
+
+        <h3>Descrição do desafio</h3>
+        <p>
+            Sistema de iluminação automática que combina um sensor de presença (PIR) com um
+            sensor de luminosidade (LDR): o LED só acende quando há <strong>presença detectada
+            e o ambiente está escuro</strong> ao mesmo tempo, simulando uma lâmpada que evita
+            desperdício de energia durante o dia.
+        </p>
+
+        <h3>Circuito (Tinkercad)</h3>
+        <div class="circuito-imagem">
+            <img src="./imagens/tinkercad/desafio1-circuito.png" alt="Circuito do Desafio 1 - Iluminação Inteligente no Tinkercad">
+        </div>
+
+        <h3>Código em C++</h3>
+        <pre class="codigo">const int pinPIR = 2;
+const int pinLDR = A0;
+const int pinLED = 13;
+const int limiteLuz = 500; // Ajuste conforme o nível de escuro desejado
+
+void setup() {
+  pinMode(pinPIR, INPUT);
+  pinMode(pinLED, OUTPUT);
+}
+
+void loop() {
+  int presenca = digitalRead(pinPIR);
+  int valorLuminosidade = analogRead(pinLDR);
+
+  // Regra: Pessoa presente + ambiente escuro -&gt; LED ligado
+  if (presenca == HIGH &amp;&amp; valorLuminosidade &lt; limiteLuz) {
+    digitalWrite(pinLED, HIGH);
+  } else {
+    digitalWrite(pinLED, LOW);
+  }
+
+  delay(100);
+}</pre>
+
+        <h3>Vídeo de demonstração</h3>
+        <div class="circuito-imagem" style="aspect-ratio:16/9; padding:0;">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/HgRVB1jxelI"
+              title="Vídeo Desafio 1" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+    <!-- ===================== DESAFIO 2 ===================== -->
+    <div class="ficha" id="desafio2">
+        <div class="ficha-header">
+            <div class="titulo">
+                <span class="categoria-tag">Desafio 2</span>
+                <h2>Estacionamento Inteligente</h2>
+            </div>
+        </div>
+
+        <h3>Descrição do desafio</h3>
+        <p>
+            Sensor de auxílio de estacionamento com sensor ultrassônico (HC-SR04) e um
+            potenciômetro que define a distância de segurança (entre 10 cm e 60 cm). O LED fica
+            apagado enquanto o objeto está distante, pisca cada vez mais rápido conforme o
+            veículo se aproxima do limite e fica aceso fixo quando a distância de perigo é
+            atingida.
+        </p>
+
+        <h3>Circuito (Tinkercad)</h3>
+        <div class="circuito-imagem">
+            <img src="./imagens/tinkercad/desafio2-circuito.png" alt="Circuito do Desafio 2 - Estacionamento Inteligente no Tinkercad">
+        </div>
+
+        <h3>Código em C++</h3>
+        <pre class="codigo">const int pinTrig = 9;
+const int pinEcho = 8;
+const int pinPot = A0;
+const int pinLED = 3;
+
+long lerDistancia() {
+  digitalWrite(pinTrig, LOW);
+  delayMicroseconds(2);
+  digitalWrite(pinTrig, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(pinTrig, LOW);
+
+  long duracao = pulseIn(pinEcho, HIGH);
+  return duracao * 0.034 / 2; // Converte tempo em centímetros
+}
+
+void setup() {
+  pinMode(pinTrig, OUTPUT);
+  pinMode(pinEcho, INPUT);
+  pinMode(pinLED, OUTPUT);
+}
+
+void loop() {
+  long distancia = lerDistancia();
+  int valPot = analogRead(pinPot);
+
+  // O potenciômetro define o limite de segurança entre 10cm e 60cm
+  int limite = map(valPot, 0, 1023, 10, 60);
+  int limitePerigo = limite / 2;
+
+  if (distancia &gt; limite) {
+    digitalWrite(pinLED, LOW); // Objeto distante
+  } else if (distancia &lt;= limitePerigo) {
+    digitalWrite(pinLED, HIGH); // Objeto muito próximo (ligado contínuo)
+  } else {
+    // Objeto se aproximando: velocidade do pisca aumenta conforme chega perto
+    int tempoPisca = map(distancia, limitePerigo, limite, 40, 300);
+    digitalWrite(pinLED, HIGH);
+    delay(tempoPisca);
+    digitalWrite(pinLED, LOW);
+    delay(tempoPisca);
+  }
+
+  delay(30);
+}</pre>
+
+        <h3>Vídeo de demonstração</h3>
+        <div class="circuito-imagem" style="aspect-ratio:16/9; padding:0;">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/4RHuMVF4jUg"
+              title="Vídeo Desafio 1" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+    <!-- ===================== DESAFIO 3 ===================== -->
+    <div class="ficha" id="desafio3">
+        <div class="ficha-header">
+            <div class="titulo">
+                <span class="categoria-tag">Desafio 3</span>
+                <h2>Ambiente Inteligente</h2>
+            </div>
+        </div>
+
+        <h3>Descrição do desafio</h3>
+        <p>
+            Monitoramento ambiental com sensor de temperatura TMP36 e um potenciômetro simulando
+            a leitura de umidade. Três LEDs indicam o status do ambiente (verde = condições
+            adequadas, vermelho = temperatura elevada, amarelo = umidade inadequada) e todos os
+            dados são enviados continuamente ao Monitor Serial, incluindo mensagens de alerta.
+        </p>
+
+        <h3>Circuito (Tinkercad)</h3>
+        <div class="circuito-imagem">
+            <img src="./imagens/tinkercad/desafio3-circuito.png" alt="Circuito do Desafio 3 - Ambiente Inteligente no Tinkercad">
+        </div>
+
+        <h3>Monitor Serial</h3>
+        <div class="monitor-imagem">
+            <img src="./imagens/tinkercad/desafio3-monitor-serial.png" alt="Monitor Serial do Desafio 3 - Ambiente Inteligente">
+        </div>
+
+        <h3>Código em C++</h3>
+        <pre class="codigo">const int pinTemp = A0;
+const int pinUmidade = A1;
+const int ledVerde = 2;
+const int ledVermelho = 3;
+const int ledAmarelo = 4;
+
+const float tempLimite = 30.0; // Limite superior de temperatura (°C)
+const int umidadeLimite = 40;  // Limite inferior de umidade (%)
+
+void setup() {
+  pinMode(ledVerde, OUTPUT);
+  pinMode(ledVermelho, OUTPUT);
+  pinMode(ledAmarelo, OUTPUT);
+  Serial.begin(9600); // Inicializa comunicação serial exigida
+}
+
+void loop() {
+  // Conversão de leitura analógica do TMP36 para Celsius
+  int leituraTemp = analogRead(pinTemp);
+  float voltagem = leituraTemp * (5.0 / 1023.0);
+  float temperatura = (voltagem - 0.5) * 100.0;
+
+  // Conversão da leitura do potenciômetro para porcentagem de umidade
+  int umidade = map(analogRead(pinUmidade), 0, 1023, 0, 100);
+
+  bool tempElevada = (temperatura &gt; tempLimite);
+  bool umidadeBaixa = (umidade &lt; umidadeLimite);
+
+  // Lógica dos LEDs indicadores
+  if (!tempElevada &amp;&amp; !umidadeBaixa) {
+    digitalWrite(ledVerde, HIGH);
+    digitalWrite(ledVermelho, LOW);
+    digitalWrite(ledAmarelo, LOW);
+  } else {
+    digitalWrite(ledVerde, LOW);
+    digitalWrite(ledVermelho, tempElevada ? HIGH : LOW);
+    digitalWrite(ledAmarelo, umidadeBaixa ? HIGH : LOW);
+  }
+
+  // Saída de dados no Monitor Serial
+  Serial.print(&quot;Temperatura: &quot;);
+  Serial.print(temperatura);
+  Serial.print(&quot; C | Umidade: &quot;);
+  Serial.print(umidade);
+  Serial.print(&quot;% | Status: &quot;);
+
+  if (tempElevada &amp;&amp; umidadeBaixa) {
+    Serial.println(&quot;ALERTA CRÍTICO (Temp Alta + Umidade Baixa)&quot;);
+  } else if (tempElevada) {
+    Serial.println(&quot;Alerta: Temperatura Elevada&quot;);
+  } else if (umidadeBaixa) {
+    Serial.println(&quot;Alerta: Umidade Inadequada&quot;);
+  } else {
+    Serial.println(&quot;Condicoes Adequadas&quot;);
+  }
+
+  delay(1000);
+}</pre>
+
+        <h3>Vídeo de demonstração</h3>
+        <div class="circuito-imagem" style="aspect-ratio:16/9; padding:0;">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TPRIig3q6HY"
+              title="Vídeo Desafio 1" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+    </footer>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>

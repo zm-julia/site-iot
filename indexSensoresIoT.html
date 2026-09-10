@@ -19,8 +19,9 @@
                 <a href="./index.html">Home</a>
                 <a href="./indexRobos.html">Robôs Industriais</a>
                 <a href="./indexSensoresIoT.html">Sensores IoT</a>
-                <a href="./indexSobre.html">Sobre o projeto</a>
+                <a href="./indexTinkercad.html">Projetos Tinkercad</a>
                 <a href="./indexGaleria.html">Galeria</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
             </nav>
         </div>
     </header>
@@ -97,6 +98,10 @@
             executada uma única vez quando a placa liga (usada para configurar pinos e
             comunicação serial), e <code>loop()</code>, que roda repetidamente enquanto a placa
             estiver ligada (usada para ler sensores e tomar decisões continuamente).
+        </p>
+        <p>
+            Quer ver o Arduino em ação em projetos completos, com circuito, código e vídeo de
+            demonstração? Confira os <a href="./indexTinkercad.html" style="color:#4fd7ff;">Desafios de Sensoriamento no Tinkercad</a>.
         </p>
     </div>
 
@@ -224,7 +229,7 @@ DHT dht(PINO_DHT, DHT11);
 
         <h3>6. MQ-2 — Gás e fumaça</h3>
         <pre class="codigo"><span class="kw">#define</span> PINO_MQ2 A2
-<span class="kw">#define</span> LIMITE_ALARME 400
+<span class="kw">const</span> float LIMITE_ALARME = 400;
 
 <span class="fn">void</span> setup() {
   Serial.begin(9600);
@@ -352,6 +357,24 @@ MFRC522 leitor(PINO_SS, PINO_RST);
             <button id="botaoSimular" type="button">Simular leitura</button>
         </div>
         <div id="saidaSimulador"></div>
+    </div>
+
+    <div class="ficha">
+        <h3>🎬 Projetos práticos no Tinkercad</h3>
+        <p>
+            Além do catálogo teórico de sensores, este site também reúne desafios práticos
+            completos — circuito, código e vídeo de demonstração — montados e simulados no
+            Tinkercad Circuits.
+        </p>
+        <div class="card-container" style="padding: 10px 0 0;">
+            <div class="card">
+                <img src="./imagens/img_sensorTermometro.svg" alt="Ícone Desafios Tinkercad">
+                <h3>Desafios de Sensoriamento</h3>
+                <p>Iluminação Inteligente, Estacionamento Inteligente e Ambiente Inteligente, com
+                    circuito, código C++ e vídeo de cada desafio.</p>
+                <button onclick="location.href='./indexTinkercad.html'">Ver desafios</button>
+            </div>
+        </div>
     </div>
 
     <h1 id="categorias">Catálogo de sensores por categoria</h1>

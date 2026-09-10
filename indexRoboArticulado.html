@@ -19,16 +19,20 @@
                 <a href="./index.html">Home</a>
                 <a href="./indexRobos.html">Robôs Industriais</a>
                 <a href="./indexSensoresIoT.html">Sensores IoT</a>
-                <a href="./indexSobre.html">Sobre o projeto</a>
+                <a href="./indexTinkercad.html">Projetos Tinkercad</a>
                 <a href="./indexGaleria.html">Galeria</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
+
             </nav>
         </div>
     </header>
 
-    <div class="breadcrumb"><a href="./index.html">Home</a> / <a href="./indexRobos.html">Robôs Industriais</a> / Robô Articulado</div>
+    <div class="breadcrumb"><a href="./index.html">Home</a> / <a href="./indexRobos.html">Robôs Industriais</a> / Robô
+        Articulado</div>
 
     <h1>Robô Articulado</h1>
-    <p class="subtitulo">O modelo mais versátil da indústria: de 4 a 7 juntas rotativas que imitam a estrutura de um braço humano.</p>
+    <p class="subtitulo">O modelo mais versátil da indústria: de 4 a 7 juntas rotativas que imitam a estrutura de um
+        braço humano.</p>
 
     <div class="indice">
         <a href="#conceito">Conceito</a>
@@ -49,61 +53,93 @@
         </div>
 
         <h3 id="conceito">Conceito</h3>
-        <p>O robô articulado (também chamado de robô de braço robótico ou antropomórfico) é composto exclusivamente por juntas rotativas conectadas em série, formando uma cadeia cinemática semelhante a um ombro, cotovelo e punho humanos. É o modelo mais flexível em termos de orientação e alcance, sendo o mais comum em linhas de produção automotiva.</p>
+        <p>O robô articulado (também chamado de robô de braço robótico ou antropomórfico) é composto exclusivamente por
+            juntas rotativas conectadas em série, formando uma cadeia cinemática semelhante a um ombro, cotovelo e punho
+            humanos. É o modelo mais flexível em termos de orientação e alcance, sendo o mais comum em linhas de
+            produção automotiva.</p>
 
         <h3 id="funcionamento">Princípio de funcionamento</h3>
-        <p>Cada junta rotativa é movida por um servomotor com redutor (geralmente harmônico ou de engrenagens planetárias) e um encoder que informa o ângulo exato. O controlador calcula a cinemática direta e inversa para transformar coordenadas cartesianas desejadas em ângulos de cada junta, permitindo que o efetuador alcance praticamente qualquer ponto e orientação dentro do envelope de trabalho esférico do robô.</p>
+        <p>Cada junta rotativa é movida por um servomotor com redutor (geralmente harmônico ou de engrenagens
+            planetárias) e um encoder que informa o ângulo exato. O controlador calcula a cinemática direta e inversa
+            para transformar coordenadas cartesianas desejadas em ângulos de cada junta, permitindo que o efetuador
+            alcance praticamente qualquer ponto e orientação dentro do envelope de trabalho esférico do robô.</p>
 
         <h3 id="caracteristicas">Principais características técnicas</h3>
         <table class="specs">
-            <tr><th>Graus de liberdade</th><td>4 a 7 eixos rotativos</td></tr>
-            <tr><th>Repetibilidade típica</th><td>±0,02 mm a ±0,1 mm</td></tr>
-            <tr><th>Capacidade de carga</th><td>3 kg a mais de 1000 kg (modelos de grande porte)</td></tr>
-            <tr><th>Alcance</th><td>500 mm a mais de 3500 mm, conforme o porte</td></tr>
-            <tr><th>Área de trabalho</th><td>Envelope esférico/irregular, alta liberdade de orientação</td></tr>
-            <tr><th>Controle</th><td>Cinemática direta e inversa em tempo real</td></tr>
+            <tr>
+                <th>Graus de liberdade</th>
+                <td>4 a 7 eixos rotativos</td>
+            </tr>
+            <tr>
+                <th>Repetibilidade típica</th>
+                <td>±0,02 mm a ±0,1 mm</td>
+            </tr>
+            <tr>
+                <th>Capacidade de carga</th>
+                <td>3 kg a mais de 1000 kg (modelos de grande porte)</td>
+            </tr>
+            <tr>
+                <th>Alcance</th>
+                <td>500 mm a mais de 3500 mm, conforme o porte</td>
+            </tr>
+            <tr>
+                <th>Área de trabalho</th>
+                <td>Envelope esférico/irregular, alta liberdade de orientação</td>
+            </tr>
+            <tr>
+                <th>Controle</th>
+                <td>Cinemática direta e inversa em tempo real</td>
+            </tr>
         </table>
 
         <h3 id="aplicacoes">Aplicações industriais</h3>
         <ul>
-                <li>Soldagem a ponto e MIG/MAG na indústria automotiva</li>
-                <li>Pintura industrial e aplicação de revestimentos</li>
-                <li>Paletização e movimentação de cargas pesadas</li>
-                <li>Usinagem, rebarbação e polimento</li>
-                <li>Manuseio de peças em fundição e forjaria</li>
+            <li>Soldagem a ponto e MIG/MAG na indústria automotiva</li>
+            <li>Pintura industrial e aplicação de revestimentos</li>
+            <li>Paletização e movimentação de cargas pesadas</li>
+            <li>Usinagem, rebarbação e polimento</li>
+            <li>Manuseio de peças em fundição e forjaria</li>
         </ul>
 
         <h3 id="iot">Integração com automação e IoT</h3>
-        <p>Robôs articulados de grande porte normalmente já nascem prontos para IIoT: seus controladores (como o FANUC R-30iB ou o KUKA KR C4) expõem dados de torque, temperatura dos motores, posição das juntas e status de segurança via OPC UA, MQTT ou Profinet, permitindo monitoramento remoto, gêmeos digitais (digital twins) e manutenção preditiva baseada em vibração e consumo de corrente dos servomotores.</p>
+        <p>Robôs articulados de grande porte normalmente já nascem prontos para IIoT: seus controladores (como o FANUC
+            R-30iB ou o KUKA KR C4) expõem dados de torque, temperatura dos motores, posição das juntas e status de
+            segurança via OPC UA, MQTT ou Profinet, permitindo monitoramento remoto, gêmeos digitais (digital twins) e
+            manutenção preditiva baseada em vibração e consumo de corrente dos servomotores.</p>
 
         <h3 id="modelos">Modelos comerciais</h3>
         <table class="modelos">
             <thead>
-                <tr><th>Fabricante</th><th>Modelo</th><th>Destaque técnico</th></tr>
+                <tr>
+                    <th>Fabricante</th>
+                    <th>Modelo</th>
+                    <th>Destaque técnico</th>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td><strong>FANUC</strong></td>
-                <td>R-2000iC</td>
-                <td>Alta carga útil, muito usado em soldagem automotiva</td>
-            </tr>
-            <tr>
-                <td><strong>KUKA</strong></td>
-                <td>KR QUANTEC series</td>
-                <td>Grande alcance e robustez estrutural</td>
-            </tr>
-            <tr>
-                <td><strong>ABB</strong></td>
-                <td>IRB 6700</td>
-                <td>Otimizado para manuseio pesado e fundição</td>
-            </tr>
+                <tr>
+                    <td><strong>FANUC</strong></td>
+                    <td>R-2000iC</td>
+                    <td>Alta carga útil, muito usado em soldagem automotiva</td>
+                </tr>
+                <tr>
+                    <td><strong>KUKA</strong></td>
+                    <td>KR QUANTEC series</td>
+                    <td>Grande alcance e robustez estrutural</td>
+                </tr>
+                <tr>
+                    <td><strong>ABB</strong></td>
+                    <td>IRB 6700</td>
+                    <td>Otimizado para manuseio pesado e fundição</td>
+                </tr>
             </tbody>
         </table>
     </div>
 
     <footer>
         <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
-        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas
+        </p>
     </footer>
 
     <script src="./scripts.js"></script>

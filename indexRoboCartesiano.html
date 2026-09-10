@@ -19,16 +19,19 @@
                 <a href="./index.html">Home</a>
                 <a href="./indexRobos.html">Robôs Industriais</a>
                 <a href="./indexSensoresIoT.html">Sensores IoT</a>
-                <a href="./indexSobre.html">Sobre o projeto</a>
+                <a href="./indexTinkercad.html">Projetos Tinkercad</a>
                 <a href="./indexGaleria.html">Galeria</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
             </nav>
         </div>
     </header>
 
-    <div class="breadcrumb"><a href="./index.html">Home</a> / <a href="./indexRobos.html">Robôs Industriais</a> / Robô Cartesiano</div>
+    <div class="breadcrumb"><a href="./index.html">Home</a> / <a href="./indexRobos.html">Robôs Industriais</a> / Robô
+        Cartesiano</div>
 
     <h1>Robô Cartesiano</h1>
-    <p class="subtitulo">Também chamado de robô de pórtico (gantry), movimenta-se em três eixos lineares perpendiculares entre si — X, Y e Z.</p>
+    <p class="subtitulo">Também chamado de robô de pórtico (gantry), movimenta-se em três eixos lineares perpendiculares
+        entre si — X, Y e Z.</p>
 
     <div class="indice">
         <a href="#conceito">Conceito</a>
@@ -49,61 +52,94 @@
         </div>
 
         <h3 id="conceito">Conceito</h3>
-        <p>O robô Cartesiano é um manipulador cujos três primeiros eixos são todos prismáticos (lineares), organizados em direções perpendiculares. O efetuador final se desloca dentro de um volume de trabalho em formato de paralelepípedo, de maneira parecida com o movimento de uma impressora 3D ou de uma fresadora CNC de grande porte.</p>
+        <p>O robô Cartesiano é um manipulador cujos três primeiros eixos são todos prismáticos (lineares), organizados
+            em direções perpendiculares. O efetuador final se desloca dentro de um volume de trabalho em formato de
+            paralelepípedo, de maneira parecida com o movimento de uma impressora 3D ou de uma fresadora CNC de grande
+            porte.</p>
 
         <h3 id="funcionamento">Princípio de funcionamento</h3>
-        <p>Cada eixo é acionado de forma independente por um motor (geralmente servomotor ou motor de passo) acoplado a um fuso de esferas, correia dentada ou cremalheira. Como os movimentos são puramente lineares e desacoplados, o cálculo da posição do efetuador é direto (cinemática simples), o que resulta em repetibilidade muito alta e programação mais simples do que em robôs com juntas rotativas.</p>
+        <p>Cada eixo é acionado de forma independente por um motor (geralmente servomotor ou motor de passo) acoplado a
+            um fuso de esferas, correia dentada ou cremalheira. Como os movimentos são puramente lineares e
+            desacoplados, o cálculo da posição do efetuador é direto (cinemática simples), o que resulta em
+            repetibilidade muito alta e programação mais simples do que em robôs com juntas rotativas.</p>
 
         <h3 id="caracteristicas">Principais características técnicas</h3>
         <table class="specs">
-            <tr><th>Graus de liberdade</th><td>3 eixos lineares (X, Y, Z), podendo receber um 4º eixo de rotação no punho</td></tr>
-            <tr><th>Tipo de acionamento</th><td>Servomotor + fuso de esferas, correia dentada ou cremalheira</td></tr>
-            <tr><th>Repetibilidade típica</th><td>±0,01 mm a ±0,05 mm</td></tr>
-            <tr><th>Capacidade de carga</th><td>De poucos kg até algumas centenas de kg, dependendo do porte</td></tr>
-            <tr><th>Área de trabalho</th><td>Formato retangular (paralelepípedo)</td></tr>
-            <tr><th>Velocidade</th><td>Alta em cursos lineares longos</td></tr>
+            <tr>
+                <th>Graus de liberdade</th>
+                <td>3 eixos lineares (X, Y, Z), podendo receber um 4º eixo de rotação no punho</td>
+            </tr>
+            <tr>
+                <th>Tipo de acionamento</th>
+                <td>Servomotor + fuso de esferas, correia dentada ou cremalheira</td>
+            </tr>
+            <tr>
+                <th>Repetibilidade típica</th>
+                <td>±0,01 mm a ±0,05 mm</td>
+            </tr>
+            <tr>
+                <th>Capacidade de carga</th>
+                <td>De poucos kg até algumas centenas de kg, dependendo do porte</td>
+            </tr>
+            <tr>
+                <th>Área de trabalho</th>
+                <td>Formato retangular (paralelepípedo)</td>
+            </tr>
+            <tr>
+                <th>Velocidade</th>
+                <td>Alta em cursos lineares longos</td>
+            </tr>
         </table>
 
         <h3 id="aplicacoes">Aplicações industriais</h3>
         <ul>
-                <li>Movimentação e paletização de caixas em linhas de embalagem</li>
-                <li>Corte, furação e usinagem de precisão (CNC)</li>
-                <li>Dispensação de adesivos, solda de ponto e pintura em superfícies planas</li>
-                <li>Manipulação de placas de circuito impresso (pick and place em larga escala)</li>
-                <li>Impressão 3D industrial e prototipagem</li>
+            <li>Movimentação e paletização de caixas em linhas de embalagem</li>
+            <li>Corte, furação e usinagem de precisão (CNC)</li>
+            <li>Dispensação de adesivos, solda de ponto e pintura em superfícies planas</li>
+            <li>Manipulação de placas de circuito impresso (pick and place em larga escala)</li>
+            <li>Impressão 3D industrial e prototipagem</li>
         </ul>
 
         <h3 id="iot">Integração com automação e IoT</h3>
-        <p>Controladores de robôs cartesianos modernos expõem dados de posição, velocidade e corrente dos motores via protocolos industriais como EtherCAT, Profinet ou Modbus TCP. Sensores de fim de curso, encoders e células de carga instalados nos eixos alimentam sistemas SCADA e plataformas de IoT industrial, permitindo monitorar o desgaste dos fusos, detectar colisões e programar manutenção preditiva com base no histórico de ciclos executados.</p>
+        <p>Controladores de robôs cartesianos modernos expõem dados de posição, velocidade e corrente dos motores via
+            protocolos industriais como EtherCAT, Profinet ou Modbus TCP. Sensores de fim de curso, encoders e células
+            de carga instalados nos eixos alimentam sistemas SCADA e plataformas de IoT industrial, permitindo monitorar
+            o desgaste dos fusos, detectar colisões e programar manutenção preditiva com base no histórico de ciclos
+            executados.</p>
 
         <h3 id="modelos">Modelos comerciais</h3>
         <table class="modelos">
             <thead>
-                <tr><th>Fabricante</th><th>Modelo</th><th>Destaque técnico</th></tr>
+                <tr>
+                    <th>Fabricante</th>
+                    <th>Modelo</th>
+                    <th>Destaque técnico</th>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td><strong>Bosch Rexroth</strong></td>
-                <td>Linear Motion System (LMS)</td>
-                <td>Módulos lineares modulares combináveis em X-Y-Z, alta rigidez</td>
-            </tr>
-            <tr>
-                <td><strong>IAI Corporation</strong></td>
-                <td>Cartesian Robot Slider (SSPA/SA)</td>
-                <td>Servoacionamento de alta precisão para pick and place</td>
-            </tr>
-            <tr>
-                <td><strong>Festo</strong></td>
-                <td>EXCM / EXCT Gantry</td>
-                <td>Pórticos compactos com motores integrados e boa relação custo-benefício</td>
-            </tr>
+                <tr>
+                    <td><strong>Bosch Rexroth</strong></td>
+                    <td>Linear Motion System (LMS)</td>
+                    <td>Módulos lineares modulares combináveis em X-Y-Z, alta rigidez</td>
+                </tr>
+                <tr>
+                    <td><strong>IAI Corporation</strong></td>
+                    <td>Cartesian Robot Slider (SSPA/SA)</td>
+                    <td>Servoacionamento de alta precisão para pick and place</td>
+                </tr>
+                <tr>
+                    <td><strong>Festo</strong></td>
+                    <td>EXCM / EXCT Gantry</td>
+                    <td>Pórticos compactos com motores integrados e boa relação custo-benefício</td>
+                </tr>
             </tbody>
         </table>
     </div>
 
     <footer>
         <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
-        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas
+        </p>
     </footer>
 
     <script src="./scripts.js"></script>
