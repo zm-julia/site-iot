@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleDetalhe.css">
+    <link rel="shortcut icon" href="./imagens/logo_industriaConectada.svg" type="image/svg+xml">
+    <title>Quiz | Indústria Conectada</title>
+
+    <style>
+        /* ================== Estilos exclusivos da página de Quiz ================== */
+        .quiz-intro {
+            max-width: 780px;
+            margin: 0 auto 46px;
+            padding: 34px 36px;
+            background: rgba(15, 8, 48, 0.7);
+            border: 1px solid rgba(79, 215, 255, 0.22);
+            border-radius: 18px;
+            text-align: center;
+        }
+        .quiz-intro h2 { color: #ffffff; margin-top: 0; font-size: 1.5rem; }
+        .quiz-intro p { color: #cfd3ff; line-height: 1.6; }
+        .quiz-resumo-topicos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0 26px;
+        }
+        .quiz-resumo-topicos span {
+            background: rgba(79, 215, 255, 0.12);
+            border: 1px solid rgba(79, 215, 255, 0.35);
+            color: #cfe9ff;
+            font-size: 0.8rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+        #btnJogar {
+            font-size: 1.05rem;
+            padding: 14px 38px;
+        }
+
+        .quiz-container {
+            max-width: 820px;
+            margin: 0 auto 60px;
+            padding: 0 24px;
+            display: none;
+        }
+        .quiz-container.ativo { display: block; }
+
+        .quiz-progresso {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            color: #9aa0d8;
+            font-size: 0.9rem;
+        }
+        .quiz-barra {
+            width: 100%;
+            height: 8px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 26px;
+        }
+        .quiz-barra-preenchida {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #4fd7ff, #ff5fc4);
+            transition: width 0.3s ease;
+        }
+
+        .quiz-card {
+            background: rgba(15, 8, 48, 0.75);
+            border: 1px solid rgba(79, 215, 255, 0.25);
+            border-radius: 18px;
+            padding: 30px 32px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        }
+        .quiz-tema {
+            display: inline-block;
+            background: linear-gradient(120deg, #ff5fc4, #b23df0);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .quiz-contexto {
+            color: #e7e7f5;
+            line-height: 1.65;
+            font-size: 1rem;
+            margin-bottom: 14px;
+        }
+        .quiz-gatilho {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.05rem;
+            line-height: 1.55;
+            margin-bottom: 18px;
+            border-left: 4px solid #4fd7ff;
+            padding-left: 14px;
+        }
+        .quiz-midia {
+            margin: 0 0 20px;
+            text-align: center;
+        }
+        .quiz-midia img {
+            max-width: 100%;
+            border-radius: 12px;
+            border: 1px solid rgba(79, 215, 255, 0.25);
+        }
+        .quiz-alternativas {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        .quiz-alt {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            text-align: left;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 12px;
+            padding: 14px 16px;
+            color: #e7e7f5;
+            font-size: 0.96rem;
+            line-height: 1.5;
+            cursor: pointer;
+            transition: border-color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+        }
+        .quiz-alt:hover { border-color: rgba(79, 215, 255, 0.55); transform: translateX(3px); }
+        .quiz-alt .letra {
+            flex-shrink: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(79, 215, 255, 0.15);
+            border: 1px solid rgba(79, 215, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #4fd7ff;
+            font-size: 0.9rem;
+        }
+        .quiz-alt.selecionada { border-color: #4fd7ff; background: rgba(79, 215, 255, 0.1); }
+        .quiz-alt.correta { border-color: #3dffb0; background: rgba(61, 255, 176, 0.12); }
+        .quiz-alt.correta .letra { background: #3dffb0; color: #04021c; border-color: #3dffb0; }
+        .quiz-alt.incorreta { border-color: #ff5f7a; background: rgba(255, 95, 122, 0.12); }
+        .quiz-alt.incorreta .letra { background: #ff5f7a; color: #04021c; border-color: #ff5f7a; }
+        .quiz-alt.desabilitada { cursor: default; }
+        .quiz-alt.desabilitada:hover { transform: none; }
+
+        .quiz-feedback {
+            margin-top: 16px;
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-size: 0.92rem;
+            line-height: 1.55;
+            display: none;
+        }
+        .quiz-feedback.mostrar { display: block; }
+        .quiz-feedback.ok { background: rgba(61, 255, 176, 0.1); border: 1px solid rgba(61, 255, 176, 0.4); color: #d6ffee; }
+        .quiz-feedback.erro { background: rgba(255, 95, 122, 0.1); border: 1px solid rgba(255, 95, 122, 0.4); color: #ffe1e6; }
+
+        .quiz-rodape-card {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 22px;
+        }
+
+        .quiz-resultado {
+            display: none;
+            max-width: 720px;
+            margin: 0 auto 60px;
+            padding: 0 24px;
+            text-align: center;
+        }
+        .quiz-resultado.ativo { display: block; }
+        .quiz-resultado-card {
+            background: rgba(15, 8, 48, 0.75);
+            border: 1px solid rgba(79, 215, 255, 0.25);
+            border-radius: 20px;
+            padding: 40px 34px;
+        }
+        .quiz-resultado-card h2 { color: #ffffff; font-size: 1.8rem; margin-top: 0; }
+        .quiz-placar {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin: 14px 0;
+            background: linear-gradient(120deg, #4fd7ff, #ff5fc4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .quiz-resultado-linhas {
+            display: flex;
+            justify-content: center;
+            gap: 34px;
+            margin: 20px 0 30px;
+            flex-wrap: wrap;
+        }
+        .quiz-resultado-linhas div { text-align: center; }
+        .quiz-resultado-linhas .num { font-size: 1.8rem; font-weight: 800; }
+        .quiz-resultado-linhas .num.acertos { color: #3dffb0; }
+        .quiz-resultado-linhas .num.erros { color: #ff5f7a; }
+        .quiz-resultado-linhas .lbl { color: #9aa0d8; font-size: 0.85rem; margin-top: 4px; }
+
+        .quiz-mensagem { color: #cfd3ff; margin-bottom: 26px; line-height: 1.6; }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./imagens/logo_industriaConectada.svg" alt="Logo Indústria Conectada" class="logo"
+                onclick="location.href='./index.html'">
+            <nav>
+                <a href="./index.html">Home</a>
+                <a href="./indexRobos.html">Robôs Industriais</a>
+                <a href="./indexSensoresIoT.html">Sensores IoT</a>
+                <a href="./indexTinkercad.html">Projetos (Tinkercad)</a>
+                <a href="./indexQuiz.html">Quiz</a>
+                <a href="./indexGaleria.html">Galeria</a>
+                <a href="./indexSobre.html">Sobre o projeto</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb"><a href="./index.html">Home</a> / Quiz</div>
+
+    <h1>Quiz — Teste seus conhecimentos</h1>
+    <p class="subtitulo">
+        Dez questões no estilo SAEP/ENEM (contexto + comando + quatro alternativas) sobre robôs
+        industriais, sensores, multímetro, Arduino, ESP8266 e leitura de código, com base em todo
+        o conteúdo apresentado neste catálogo.
+    </p>
+
+    <!-- ===================== TELA INICIAL ===================== -->
+    <div class="quiz-intro" id="telaIntro">
+        <h2>Pronto para testar o que aprendeu?</h2>
+        <p>
+            O quiz tem 10 questões contextualizadas, cada uma com apenas uma alternativa correta.
+            Ao final, você verá sua pontuação e quantas questões acertou e errou.
+        </p>
+        <div class="quiz-resumo-topicos">
+            <span>🦾 Robótica Industrial</span>
+            <span>📡 Sensores</span>
+            <span>🔌 Multímetro</span>
+            <span>🔧 Arduino</span>
+            <span>📶 ESP8266</span>
+            <span>💻 Leitura de código</span>
+        </div>
+        <button id="btnJogar" type="button">▶ Jogar</button>
+    </div>
+
+    <!-- ===================== QUIZ EM ANDAMENTO ===================== -->
+    <div class="quiz-container" id="quizContainer">
+        <div class="quiz-progresso">
+            <span id="progressoTexto">Questão 1 de 10</span>
+            <span id="progressoPlacar">Acertos: 0 · Erros: 0</span>
+        </div>
+        <div class="quiz-barra"><div class="quiz-barra-preenchida" id="barraPreenchida"></div></div>
+
+        <div class="quiz-card">
+            <span class="quiz-tema" id="questaoTema">Tema</span>
+            <p class="quiz-contexto" id="questaoContexto">Contexto...</p>
+            <p class="quiz-gatilho" id="questaoGatilho">Gatilho...</p>
+            <div class="quiz-midia" id="questaoMidia"></div>
+            <div class="quiz-alternativas" id="questaoAlternativas"></div>
+            <div class="quiz-feedback" id="questaoFeedback"></div>
+            <div class="quiz-rodape-card">
+                <button id="btnProxima" type="button" style="display:none;">Próxima questão →</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== TELA DE RESULTADO ===================== -->
+    <div class="quiz-resultado" id="telaResultado">
+        <div class="quiz-resultado-card">
+            <h2>Quiz finalizado!</h2>
+            <div class="quiz-placar" id="placarFinal">0 / 10</div>
+            <p class="quiz-mensagem" id="mensagemFinal"></p>
+            <div class="quiz-resultado-linhas">
+                <div><div class="num acertos" id="totalAcertos">0</div><div class="lbl">Acertos</div></div>
+                <div><div class="num erros" id="totalErros">0</div><div class="lbl">Erros</div></div>
+            </div>
+            <button id="btnJogarNovamente" type="button">🔁 Jogar novamente</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Indústria Conectada — Catálogo técnico de Robótica Industrial e IoT.</p>
+        <p>Projeto acadêmico · Curso Técnico em Desenvolvimento de Sistemas · Unidade Curricular: Internet das Coisas</p>
+    </footer>
+
+    <script src="./scripts.js"></script>
+    <script src="./quiz.js"></script>
+</body>
+
+</html>
